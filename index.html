@@ -1,507 +1,382 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Muhammad Alfandi Hasibuan</title>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description"
+            content="Start your development with Meyawo landing page.">
+        <meta name="author" content="Devcrud">
+        <title>Alfandi Hasibuan</title>
+        <!-- font icons -->
+        <link rel="icon" type="image/x-icon" href="assets/imgs/myFavicon.png">
+        <link rel="stylesheet"
+            href="assets/vendors/themify-icons/css/themify-icons.css">
+        <!-- Bootstrap + Meyawo main styles -->
+        <link rel="stylesheet" href="assets/css/meyawo.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <style>
+            /* CSS for the loader container */
+            .loader-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #695aa6;
+            }
     
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+            /* CSS for the loader animation */
+            .loader, .loader:before, .loader:after {
+                border-radius: 50%;
+                width: 2.5em;
+                height: 2.5em;
+                animation-fill-mode: both;
+                animation: bblFadInOut 1.8s infinite ease-in-out;
+                }
+            .loader {
+                color: #FFF;
+                font-size: 7px;
+                position: relative;
+                text-indent: -9999em;
+                transform: translateZ(0);
+                animation-delay: -0.16s;
+            }
+            .loader:before,
+            .loader:after {
+                content: '';
+                position: absolute;
+                top: 0;
+            }
+            .loader:before {
+                left: -3.5em;
+                animation-delay: -0.32s;
+            }
+            .loader:after {
+                left: 3.5em;
+            }
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="css/fontAwesome.css" />
-    <link rel="stylesheet" href="css/light-box.css" />
-    <link rel="stylesheet" href="css/templatemo-main.css" />
+            @keyframes bblFadInOut {
+                0%, 80%, 100% { box-shadow: 0 2.5em 0 -1.3em }
+                40% { box-shadow: 0 2.5em 0 0 }
+            }
+    
+            /* Initially hide the main content */
+            .content {
+                display: none;
+            }
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" />
-
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-  </head>
-
-  <body>
-    <div class="sequence">
-      <div class="seq-preloader">
-        <svg width="39" height="16" viewBox="0 0 39 16" xmlns="http://www.w3.org/2000/svg" class="seq-preload-indicator">
-          <g fill="#F96D38">
-            <path class="seq-preload-circle seq-preload-circle-1" d="M3.999 12.012c2.209 0 3.999-1.791 3.999-3.999s-1.79-3.999-3.999-3.999-3.999 1.791-3.999 3.999 1.79 3.999 3.999 3.999z" />
-            <path class="seq-preload-circle seq-preload-circle-2" d="M15.996 13.468c3.018 0 5.465-2.447 5.465-5.466 0-3.018-2.447-5.465-5.465-5.465-3.019 0-5.466 2.447-5.466 5.465 0 3.019 2.447 5.466 5.466 5.466z" />
-            <path class="seq-preload-circle seq-preload-circle-3" d="M31.322 15.334c4.049 0 7.332-3.282 7.332-7.332 0-4.049-3.282-7.332-7.332-7.332s-7.332 3.283-7.332 7.332c0 4.05 3.283 7.332 7.332 7.332z" />
-          </g>
-        </svg>
-      </div>
-    </div>
-
-    <nav>
-      <div class="logo">
-        <img src="img/logo.png" alt="" />
-      </div>
-      <div class="mini-logo">
-        <img src="img/mini_logo.png" alt="" />
-      </div>
-      <ul>
-        <li>
-          <a href="#1"><i class="fa fa-home"></i> <em>Home</em></a>
-        </li>
-        <li>
-          <a href="#2"><i class="fa fa-user"></i> <em>About</em></a>
-        </li>
-        <li>
-          <a href="#3"><i class="fa fa-pencil"></i> <em>Entries</em></a>
-        </li>
-        <li>
-          <a href="#4"><i class="fa fa-image"></i> <em>Work</em></a>
-        </li>
-        <li>
-          <a href="#5"><i class="fa fa-envelope"></i> <em>Contact</em></a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="slides">
-      <div class="slide" id="1">
-        <div class="content first-content">
-          <div class="container-fluid">
-            <div class="col-md-3">
-              <div class="author-image"><img src="img/fandi.png" alt="Author Image" /></div>
-            </div>
-            <div class="col-md-9">
-              <h2>Muhammad Alfandi Hasibuan</h2>
-              <p>Software Developer</p>
-              <div class="fb-btn">
-                <a href="https://www.linkedin.com/in/alfandihasibuan" target="_blank"><i class="fa fa-linkedin"></i></a>
-              </div>
-              <div class="fb-btn">
-                <a href="https://github.com/alfandihasibuan" target="_blank"><i class="fa fa-github"></i></a>
-              </div>
-              <div class="fb-btn">
-                <a href="https://instagram.com/littlefandi" target="_blank"><i class="fa fa-instagram"></i></a>
-              </div>
-              <div class="fb-btn">
-                <a href="https://twitter.com/littlefandi" target="_blank"><i class="fa fa-twitter"></i></a>
-              </div>
-              <div class="fb-btn">
-                <a href="https://www.facebook.com/muhammad.alfandi.92" target="_blank"><i class="fa fa-facebook"></i></a>
-              </div>
-            </div>
-          </div>
+            /* CSS for the loader text */
+            .loader-text {
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 10px; /* Add some spacing between the text and the loader */
+            }
+        </style>
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+        <!-- Loader container with text -->
+        <div class="loader-container">
+            <!-- Loader animation -->
+            <div class="loader"></div>
+            <!-- Text for the loader -->
+            <p class="loader-text"></p>
         </div>
-      </div>
-      <div class="slide" id="2">
-        <div class="content second-content">
-          <div class="container-fluid">
-            <div class="col-md-6">
-              <div class="left-content">
-                <h2>About</h2>
-                <p>
-                  I'm a computer science and technology graduate majoring in information systems. but, my experience is very wide in the world of technology. During my college days, I sought a lot of experience because of my curiosity. From
-                  that experience, I can conclude my expertise in the field of software development.
-                </p>
-                <p>
-                  My expertise is in programming languages ​​such as PHP (CodeIgniter, Laravel), Android (Flutter), Git, JavaScript, HTML, AJAX, CSS and MySQL. Previously, I also had a history of working on my own as a freelancer from
-                  several clients and I have a good reputation.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="right-image">
-                <img src="img/about_image.jpg" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="slide" id="3">
-        <div class="content third-content">
-          <div class="container-fluid">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="first-section">
-                  <div class="container-fluid">
+
+        <!-- Page Navbar -->
+        <div class="content">
+            <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+                <div class="container">
+                    <a class="logo" href="https://alfandihasibuan.my.id">Alfandi
+                        Hasibuan</a>
+                    <ul class="nav">
+                        <li class="item">
+                            <a class="link" href="#home">Home</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#about">About Me</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#portfolio">Projects</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="javascript:void(0)" id="nav-toggle"
+                        class="hamburger hamburger--elastic">
+                        <div class="hamburger-box">
+                            <div class="hamburger-inner"></div>
+                        </div>
+                    </a>
+                </div>
+            </nav><!-- End of Page Navbar -->
+
+            <!-- page header -->
+            <header id="home" class="header">
+                <div class="overlay"></div>
+                <div class="header-content container">
+                    <h1 class="header-title">
+                        <span class="up">Hi!</span>
+                        <span class="down">I'm Alfandi</span>
+                    </h1>
+                    <p class="header-subtitle">Software Developer</p>
+
+                    <a target="_blank" href="https://wa.link/t3pfw3"
+                        class="btn btn-primary">Find Me on WhatsApp!<i
+                            class="fa fa-whatsapp"></i></a>
+                </div>
+            </header><!-- end of page header -->
+
+            <!-- about section -->
+            <section class="section pt-0" id="about">
+                <!-- container -->
+                <div class="container text-center">
+                    <!-- about wrapper -->
+                    <div class="about">
+                        <div class="about-img-holder">
+                            <img src="assets/imgs/cartoonize_fandi1.png"
+                                class="about-img"
+                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                        </div>
+                        <div class="about-caption">
+                            <p class="section-subtitle">Who Am I ?</p>
+                            <h2 class="section-title mb-3">About Me</h2>
+                            <p>
+                                Born in 1999 in Pematang Siantar, Indonesia. Im
+                                a
+                                computer science and technology graduate
+                                majoring in
+                                information
+                                systems. However, my experience is very wide in
+                                the
+                                world of technology. I sought a lot of
+                                experience
+                                because of my curiosity and expertise in the
+                                field
+                                of software development.
+                                My expertise is in programming languages such as
+                                PHP
+                                (CodeIgniter, Laravel),
+                                Android (Flutter), Git, JavaScript (Node.js,
+                                AJAX,
+                                React.js, Vue.js) and MySQL. I believe that
+                                something that is not easily obtained will have
+                                an
+                                unusual impact.
+                                <br><br>I also had a history of working on my
+                                own as
+                                a freelancer. If you're interested in
+                                connecting,
+                                discussing a potential project or simply want to
+                                chat, don't hesitate to get in touch.
+                                I'm excited to connect with you and explore new
+                                opportunities together.
+                            </p>
+                        </div>
+                    </div><!-- end of about wrapper -->
+                </div><!-- end of container -->
+            </section> <!-- end of about section -->
+
+            <!-- service section -->
+            <section class="section" id="service">
+                <div class="container text-center">
+                    <p class="section-subtitle">What I Do ?</p>
+                    <h6 class="section-title mb-6">Service</h6>
+                    <!-- row -->
                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="left-content">
-                          <h2>Quisque commodo quam</h2>
-                          <p>
-                            Vestibulum augue ex, finibus sit amet nisi id, maximus ultrices ipsum. Maecenas rhoncus nibh in mauris lobortis, a maximus diam faucibus. In et eros urna. Suspendisse potenti. Pellentesque commodo, neque nec
-                            molestie tempus, purus ante feugiat augue.
-                          </p>
-                          <div class="main-btn"><a href="#4">Continue Reading</a></div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="service-card">
+                                <div class="body">
+                                    <img
+                                        src="assets/imgs/software-svgrepo-com.svg"
+                                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
+                                        class="icon">
+                                    <h6 class="title">Software</h6>
+                                    <p class="subtitle">Software.</p>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="right-image">
-                          <img src="img/first_service.jpg" alt="first service" />
+                        <div class="col-md-6 col-lg-3">
+                            <div class="service-card">
+                                <div class="body">
+                                    <img src="assets/imgs/analytics.svg"
+                                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
+                                        class="icon">
+                                    <h6 class="title">Website</h6>
+                                    <p class="subtitle">Website.</p>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="service-card">
+                                <div class="body">
+                                    <img src="assets/imgs/responsive.svg"
+                                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
+                                        class="icon">
+                                    <h6 class="title">Mobile App</h6>
+                                    <p class="subtitle">Mobile App.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="service-card">
+                                <div class="body">
+                                    <img src="assets/imgs/toolbox.svg"
+                                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
+                                        class="icon">
+                                    <h6 class="title">Database</h6>
+                                    <p class="subtitle">Database.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end of row -->
                 </div>
-                <div class="second-section">
-                  <div class="container-fluid">
+            </section><!-- end of service section -->
+
+            <!-- portfolio section -->
+            <section class="section" id="portfolio">
+                <div class="container text-center">
+                    <p class="section-subtitle">What I Did ?</p>
+                    <h6 class="section-title mb-6">Projects</h6>
+                    <!-- row -->
+
+                    <br>
                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="left-image">
-                          <img src="img/second_service.jpg" alt="second service" />
+                        <div class="col-md-4">
+                            <p class="section-subtitle mb-4">2023</p>
+                            <h5><a onclick="alert('not ready yet')">Information
+                                    System for Waste Management at the
+                                    Environmental
+                                    Department of Tebing Tinggi</a></h5>
+                            <p>Commission / Develop</p>
+                            <br>
+                            <h5><a onclick="alert('not ready yet')">Accounting
+                                    Information System for Transaction
+                                    Management at
+                                    PT Digital Universal International Transfer</a></h5>
+                            <p>Commission / Develop</p>
+                            <br>
+                            <h5><a onclick="alert('not ready yet')">Amanah
+                                    Sehati Clinic Information System</a></h5>
+                            <p>Commission / Develop</p>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="right-content">
-                          <h2>Maecenas eu purus eu sapien</h2>
-                          <p>
-                            Sed vitae felis in lorem mollis mollis eget in leo. Donec commodo, ex nec rutrum venenatis, nisi nisl malesuada magna, sed semper ipsum enim a ipsum. Aenean in ante vel mi molestie bibendum. Quisque sit amet
-                            lacus in diam pretium faucibus. Cras vel justo lorem.
-                          </p>
-                          <div class="main-btn"><a href="#4">Continue Reading</a></div>
+                        <div class="col-md-4">
+                            <p class="section-subtitle mb-4">2022</p>
+                            <h5><a onclick="alert('not ready yet')">Sports
+                                    Store Warehouse</a></h5>
+                            <p> Commission / Develop / Special </p>
+                            <br>
+                            <h5><a onclick="alert('not ready yet')">School Fees
+                                    Payment System Senior High School Negeri 1
+                                    Kutalimbaru</a></h5>
+                            <p>Commission / Develop</p>
+                            <h5><a onclick="alert('not ready yet')">Website
+                                    Profile Paropo I Village</a></h5>
+                            <p> Commission / Develop / Special </p>
                         </div>
-                      </div>
+                        <div class="col-md-4">
+                            <p class="section-subtitle mb-4">2021</p>
+                            <h5><a target="_blank"
+                                    href="http://www.ksopkualatanjung.com">KSOP
+                                    Kualatanjung</a></h5>
+                            <p> Commission / Develop / Special </p>
+                            <br>
+                            <h5><a target="_blank"
+                                    href="http://www.raihanbakery.com">Raihan
+                                    Bakery Medan</a></h5>
+                            <p> Commission / Develop / Special </p>
+                            <br>
+                            <h5><a target="_blank"
+                                    href="https://jurnal.murnisadar.ac.id/index.php/Tekinkom/article/view/295">Innovation
+                                    In The Development And Improvement Of Public
+                                    Services At Wildlife Park Tourism Objects
+                                    Using
+                                    The Social Trust Path Method <i
+                                        class="ti ti-link"></i></a></h5>
+                            <p> Undergraduate Thesis / Special </p>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                </div><!-- end of container -->
+            </section> <!-- end of portfolio section -->
+
+            <!-- section -->
+            <section class="section-sm bg-primary">
+                <!-- container -->
+                <div class="container text-center text-sm-left">
+                    <!-- row -->
+                    <div class="row align-items-center">
+                        <div class="col-sm offset-md-1 mb-4 mb-md-0">
+                            <h6 class="title text-light">Want to work with me?</h6>
+                            <p class="m-0 text-light">Always feel Free to
+                                Contact &
+                                Hire me</p>
+                        </div>
+                        <div class="col-sm offset-sm-2 offset-md-3">
+                            <a target="_blank" href="https://wa.link/t3pfw3"
+                                class="btn btn-lg my-font btn-light rounded">Get
+                                in
+                                touch</a>
+                        </div>
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </section> <!-- end of section -->
+
+            <!-- contact section -->
+
+            <section class="section" id="contact">
+                <!-- footer -->
+                <div class="container">
+                    <footer class="footer">
+                        <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script>
+                            &copy; <a href="http://www.alfandihasibuan.my.id">Alfandi
+                                Hasibuan</a></p>
+                        <div class="social-links text-right m-auto ml-sm-auto">
+                            <a target="_blank"
+                                href="https://github.com/alfandihasibuan"
+                                class="link" title="GitHub"><i
+                                    class="ti-github"></i></a>
+                            <a target="_blank"
+                                href="https://twitter.com/alfandi_hsb"
+                                class="link"
+                                title="X (formerly Twitter)"><i
+                                    class="ti-twitter-alt"></i></a>
+                            <a target="_blank"
+                                href="https://www.facebook.com/muhammad.alfandi.92"
+                                class="link" title="X (formerly Twitter)"><i
+                                    class="ti-facebook"></i></a>
+                            <a href="mailto:fandi.workprojects@gmail.com"
+                                class="link"><i
+                                    class="ti-email"></i></a>
+                            <a target="_blank"
+                                href="https://instagram.com/alfandi.hsb"
+                                class="link" title="Instagram"><i
+                                    class="ti-instagram"></i></a>
+                            <a target="_blank"
+                                href="https://www.linkedin.com/in/alfandihasibuan/"
+                                class="link"><i
+                                    class="ti-linkedin"></i></a>
+                        </div>
+                    </footer>
+                </div><!-- end of page footer -->
+            </section><!-- end of contact section -->
         </div>
-      </div>
-      <div class="slide" id="4">
-        <div class="content fourth-content">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/first_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Number One</h2>
-                          <p>Quisque sit amet lacus in diam pretium faucibus. Cras vel justo lorem.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/first_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/second_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Number Two</h2>
-                          <p>Donec eget dictum tellus. Curabitur a interdum diam. Nulla vestibulum porttitor porta.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/second_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/third_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Number Three</h2>
-                          <p>Cras varius dolor et augue fringilla, eu commodo sapien iaculis.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/third_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/fourth_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Number Four</h2>
-                          <p>Vestibulum augue ex, finibus sit amet nisi id, maximus ultrices ipsum.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/fourth_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/fifth_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Fifth Item</h2>
-                          <p>Donec commodo, ex nec rutrum venenatis, nisi nisl malesuada magna.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/fifth_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/sixth_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Sixth Item</h2>
-                          <p>Maecenas dapibus neque sed nisl consectetur, id semper nisi egestas.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/sixth_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/seventh_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Number Seven</h2>
-                          <p>Etiam aliquet, est id varius fringilla, eros libero pellentesque lectus.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/seventh_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/eight_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Number Eight</h2>
-                          <p>Vestibulum augue ex, finibus sit amet nisi id, maximus ultrices ipsum.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/eight_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/ninth_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Number Nine</h2>
-                          <p>Orci varius natoque penatibus et magnis dis parturient montes.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/ninth_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/fifth_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Number Ten</h2>
-                          <p>Vestibulum augue ex, finibus sit amet nisi id, maximus ultrices ipsum.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/fifth_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/first_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Eleventh Item</h2>
-                          <p>Cras varius dolor et augue fringilla, eu commodo sapien iaculis.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/first_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                <div class="item">
-                  <div class="thumb">
-                    <a href="img/second_big_item.jpg" data-lightbox="image-1"
-                      ><div class="hover-effect">
-                        <div class="hover-content">
-                          <h2>Twelvth Item</h2>
-                          <p>Etiam tincidunt magna ex, sit amet lobortis felis bibendum id.</p>
-                        </div>
-                      </div></a
-                    >
-                    <div class="image">
-                      <img src="img/second_item.jpg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="slide" id="5">
-        <div class="content fifth-content">
-          <div class="container-fluid">
-            <div class="col-md-6">
-              <div id="map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254832.50415617487!2d98.52940421349736!3d3.6426183043912945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131cc1c3eb2fd%3A0x23d431c8a6908262!2sMedan%2C%20Kota%20Medan%2C%20Sumatera%20Utara!5e0!3m2!1sid!2sid!4v1663892026638!5m2!1sid!2sid"
-                  width="100%"
-                  height="500px"
-                  frameborder="0"
-                  style="border: 0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <form id="contact" action="" method="post">
-                <div class="row">
-                  <div class="col-md-12">
-                    <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="" />
-                    </fieldset>
-                  </div>
-                  <div class="col-md-12">
-                    <fieldset>
-                      <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="" />
-                    </fieldset>
-                  </div>
-                  <div class="col-md-12">
-                    <fieldset>
-                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject..." required="" />
-                    </fieldset>
-                  </div>
-                  <div class="col-md-12">
-                    <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-md-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="btn">Send Now</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <!-- core  -->
+        <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+        <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
-    <div class="footer">
-      <div class="content">
-        <p>Muhammad Alfandi Hasibuan &copy; 2022</p>
-      </div>
-    </div>
+        <!-- bootstrap 3 affix -->
+        <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>
-      window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>');
-    </script>
-
-    <script src="js/vendor/bootstrap.min.js"></script>
-
-    <script src="js/datepicker.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
-    <script type="text/javascript">
-      $(document).ready(function () {
-        // navigation click actions
-        $(".scroll-link").on("click", function (event) {
-          event.preventDefault();
-          var sectionID = $(this).attr("data-id");
-          scrollToID("#" + sectionID, 750);
-        });
-        // scroll to top action
-        $(".scroll-top").on("click", function (event) {
-          event.preventDefault();
-          $("html, body").animate({ scrollTop: 0 }, "slow");
-        });
-        // mobile nav toggle
-        $("#nav-toggle").on("click", function (event) {
-          event.preventDefault();
-          $("#main-nav").toggleClass("open");
-        });
-      });
-      // scroll function
-      function scrollToID(id, speed) {
-        var offSet = 0;
-        var targetOffset = $(id).offset().top - offSet;
-        var mainNav = $("#main-nav");
-        $("html,body").animate({ scrollTop: targetOffset }, speed);
-        if (mainNav.hasClass("open")) {
-          mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-          mainNav.removeClass("open");
-        }
-      }
-      if (typeof console === "undefined") {
-        console = {
-          log: function () {},
-        };
-      }
-    </script>
-  </body>
-</html> -->
-<!doctype html>
-<title>Site Maintenance</title>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-<style>
-  html, body { padding: 0; margin: 0; width: 100%; height: 100%; }
-  * {box-sizing: border-box;}
-  body { text-align: center; padding: 0; background: #d6433b; color: #fff; font-family: Open Sans; }
-  h1 { font-size: 50px; font-weight: 100; text-align: center;}
-  body { font-family: Open Sans; font-weight: 100; font-size: 20px; color: #fff; text-align: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center;}
-  article { display: block; width: 700px; padding: 50px; margin: 0 auto; }
-  a { color: #fff; font-weight: bold;}
-  a:hover { text-decoration: none; }
-  svg { width: 75px; margin-top: 1em; }
-</style>
-
-<article>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.24 202.24"><defs><style>.cls-1{fill:#fff;}</style></defs><title>Asset 3</title><g id="Layer_2" data-name="Layer 2"><g id="Capa_1" data-name="Capa 1"><path class="cls-1" d="M101.12,0A101.12,101.12,0,1,0,202.24,101.12,101.12,101.12,0,0,0,101.12,0ZM159,148.76H43.28a11.57,11.57,0,0,1-10-17.34L91.09,31.16a11.57,11.57,0,0,1,20.06,0L169,131.43a11.57,11.57,0,0,1-10,17.34Z"/><path class="cls-1" d="M101.12,36.93h0L43.27,137.21H159L101.13,36.94Zm0,88.7a7.71,7.71,0,1,1,7.71-7.71A7.71,7.71,0,0,1,101.12,125.63Zm7.71-50.13a7.56,7.56,0,0,1-.11,1.3l-3.8,22.49a3.86,3.86,0,0,1-7.61,0l-3.8-22.49a8,8,0,0,1-.11-1.3,7.71,7.71,0,1,1,15.43,0Z"/></g></g></svg>
-    <h1>We&rsquo;ll be back soon!</h1>
-    <div>
-        <p>Sorry for the inconvenience. We&rsquo;re performing some maintenance at the moment. If you need to you can always follow us on <a href="http://www.twitter.com/">Twitter</a> for updates, otherwise we&rsquo;ll be back up shortly!</p>
-        <p>&mdash; The [WEBSITE NAME] Team</p>
-    </div>
-</article>
+        <!-- Meyawo js -->
+        <script src="assets/js/meyawo.js"></script>
+        <script>
+            // Simulate loading content (remove the loader after a delay)
+            setTimeout(function() {
+                document.querySelector('.loader-container').style.display = 'none';
+                document.querySelector('.content').style.display = 'block';
+            }, 2000); // Change the delay (in milliseconds) as needed
+        </script>
+    </body>
+</html>
