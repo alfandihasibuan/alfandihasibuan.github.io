@@ -1,0 +1,4 @@
+{
+  "plugins": [""],
+  "tailwindConfig": "tailwind.config.js"
+}

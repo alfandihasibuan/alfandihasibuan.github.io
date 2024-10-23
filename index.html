@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -11,20 +11,26 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
         rel="stylesheet">
     <link href="public/css/style.css" rel="stylesheet">
+    <script>
+        document.documentElement.classList.toggle(
+            'dark',
+            localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        )
+    </script>
 </head>
 
 <body>
     <!-- Preloader Start -->
-    <div id="preloader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <!-- <div id="preloader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
         <svg class="loadweb">
-            <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+            <text class="text-sm md:text-2xl" x="50%" y="50%" dy=".35em" text-anchor="middle">
                 Alfandi Hasibuan Portfolio
             </text>
         </svg>
-    </div>
+    </div> -->
     <!-- Preloader End -->
 
-    <div class="content hidden">
+    <div class="content">
         <!-- Header Start -->
         <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
             <div class="container">
@@ -40,22 +46,44 @@
                         </button>
 
                         <nav id="nav-menu"
-                            class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                            class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full mt-2 lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-base lg:dark:bg-transparent">
                             <ul class="block lg:flex">
                                 <li class="group">
-                                    <a href="#home" class="text-base py-2 mx-8 flex group-hover:text-primary">Home</a>
+                                    <a href="#home"
+                                        class="text-base py-2 mx-8 flex group-hover:text-primary dark:text-secondary">Home</a>
                                 </li>
                                 <li class="group">
-                                    <a href="#about" class="text-base py-2 mx-8 flex group-hover:text-primary">About</a>
+                                    <a href="#projects"
+                                        class="text-base py-2 mx-8 flex group-hover:text-primary dark:text-secondary">Projects</a>
                                 </li>
                                 <li class="group">
-                                    <a href="#recentprojects"
-                                        class="text-base py-2 mx-8 flex group-hover:text-primary">Recent
-                                        Projects</a>
+                                    <a href="#info"
+                                        class="text-base py-2 mx-8 flex group-hover:text-primary dark:text-secondary">Info</a>
                                 </li>
                                 <li class="group">
                                     <a href="#contact"
-                                        class="text-base py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                                        class="text-base py-2 mx-8 flex group-hover:text-primary dark:text-secondary">Contact</a>
+                                </li>
+                                <li class="flex mt-3 lg:mt-0 items-center pl-8">
+                                    <div class="flex items-center mr-4">
+                                        <!-- Light Mode Icon -->
+                                        <svg id="light-icon"
+                                            class="w-6 h-6 text-yellow-500 cursor-pointer transition transform duration-300 ease-in-out"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 2v2m0 16v2m4.22-4.22l1.42 1.42M5.64 5.64l1.42 1.42M18 12h2m-16 0H2m4.22 4.22l-1.42 1.42M18.36 5.64l-1.42 1.42M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                        </svg>
+
+                                        <!-- Dark Mode Icon -->
+                                        <svg id="dark-icon"
+                                            class="w-6 h-6 text-primary cursor-pointer transition transform duration-300 ease-in-out hidden"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 3v1M12 20v1M5.64 5.64l.71.71m12-12l.71.71M16.95 12h1M6 12H5M3 12h1m16 0h1m-1.64 5.64l-.71.71m-12-12l-.71.71M12 4.22a7.78 7.78 0 000 15.56c3.61 0 6.78-2.92 7.56-6.44a7.763 7.763 0 00-7.56-9.12z" />
+                                        </svg>
+                                    </div>
                                 </li>
                             </ul>
                         </nav>
@@ -66,16 +94,18 @@
         <!-- Header End -->
 
         <!-- Hero Section Start -->
-        <section id="home" class="pt-36 pb-40">
+        <section id="home" class="pt-36 pb-36 dark:bg-base">
             <div class="container">
                 <div class="flex flex-wrap">
                     <div class="w-full self-center px-4 lg:w-1/2">
-                        <h1 class="font-semibold text-2xl lg:text-4xl">Alfandi Hasibuan</h1>
-                        <h2 class="font-extralight text-md lg:text-2xl">Full Stack Web Developer</h2>
+                        <h1 class="font-semibold text-2xl lg:text-4xl dark:text-secondary">Alfandi Hasibuan</h1>
+                        <h2 class="font-extralight text-md lg:text-2xl dark:text-secondary">Full Stack Web Developer
+                        </h2>
                     </div>
                     <div class="w-full self-end px-4 lg:w-1/2">
                         <div class="relative mt-10 ">
-                            <p class="py-8 leading-relaxed text-justify lg:text-lg">Born in 1999 in Pematang Siantar,
+                            <p class="py-8 leading-relaxed text-justify lg:text-lg dark:text-secondary">Born in 1999 in
+                                Pematang Siantar,
                                 Indonesia, I am a computer science graduate specializing in Information Systems. I’ve
                                 gained
                                 hands-on experience in software development and programming during my studies, which
@@ -101,25 +131,28 @@
         </section>
         <!-- Hero Section End -->
 
-        <!-- Recent Project Section Start -->
-        <section id="recentprojects" class="pt-24 pb-40 bg-slate-100">
+        <!-- Project Section Start -->
+        <section id="projects" class="pt-36 pb-36 bg-slate-200 dark:bg-base dark:bg-opacity-90">
             <div class="container">
                 <div class="flex flex-wrap">
                     <div class="w-full px-4 mb-4">
-                        <h1 class="font-semibold text-2xl md:text-2xl">Recent Projects</h1>
-                        <h2 class="font-extralight text-sm md:text-lg">What I Did ?</h2>
+                        <h1 class="font-semibold text-2xl md:text-2xl dark:text-secondary">Projects</h1>
+                        <h2 class="font-extralight text-sm md:text-lg dark:text-secondary">What I Did ?</h2>
                     </div>
                     <!-- Project 1 Start -->
                     <div class="w-full lg:w-1/2">
                         <div
                             class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1 class="font-semibold text-lg border-b border-dashed border-primary pb-4">Vendidit Store
+                            <h1
+                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
+                                Vendidit Store
                             </h1>
-                            <p class="my-4 text-justify">The system provides a store management platform that allows
+                            <p class="my-4 text-justify dark:text-secondary">The system provides a store management
+                                platform that allows
                                 users
                                 to view available products. Admins can record incoming and outgoing goods and generate
                                 comprehensive inventory reports according to business needs.</p>
-                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4">
+                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4 dark:text-secondary">
                                 <div>#CodeIgniter</div>
                                 <div>#StoreManagement</div>
                                 <div>#FullStack</div>
@@ -127,7 +160,7 @@
                             <div class="flex items-center justify-between border-t border-dashed border-primary">
                                 <div class="flex items-center my-2">
                                     <a target="_blank" href="https://vendiditstore.com/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
+                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
                                         <svg class="fill-current" stroke="currentColor" fill="currentColor"
                                             stroke-width="0" version="1.1" viewBox="0 0 16 16" height="18px"
                                             width="18px" xmlns="http://www.w3.org/2000/svg">
@@ -140,7 +173,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <p class="font-thin">September 2024</p>
+                                <p class="font-thin dark:text-secondary">September 2024</p>
                             </div>
                         </div>
                     </div>
@@ -149,12 +182,15 @@
                     <div class="w-full lg:w-1/2">
                         <div
                             class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1 class="font-semibold text-lg border-b border-dashed border-primary pb-4">Notaris App
+                            <h1
+                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
+                                Notaris App
                             </h1>
-                            <p class="my-4 text-justify">Applications that are used to manage file data and file
+                            <p class="my-4 text-justify dark:text-secondary">Applications that are used to manage file
+                                data and file
                                 archives in
                                 notary offices can be managed dynamically by each user.</p>
-                            <div class="flex flex-wrap font-extralight lg:space-x-2 mb-4">
+                            <div class="flex flex-wrap font-extralight lg:space-x-2 mb-4 dark:text-secondary">
                                 <div>#Flutter</div>
                                 <div>#ManagementApp</div>
                                 <div>#FullStack</div>
@@ -163,7 +199,7 @@
                                 <div class="flex items-center my-2">
                                     <a target="_blank"
                                         href="https://alfandi.notion.site/Notaris-App-1286f4195b86807fa511c51746e9d3fe?pvs=4/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
+                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
                                         <svg class="fill-current" role="img" width="21px" role="img" viewBox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <title>Notion</title>
@@ -172,7 +208,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <p class="font-thin">August 2024</p>
+                                <p class="font-thin dark:text-secondary">August 2024</p>
                             </div>
                         </div>
                     </div>
@@ -180,14 +216,17 @@
                     <!-- Project 3 Start -->
                     <div class="w-full lg:w-1/2">
                         <div
-                            class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1 class="font-semibold text-lg border-b border-dashed border-primary pb-4">MTs Al-Arafah
+                            class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between dark:text-secondary">
+                            <h1
+                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
+                                MTs Al-Arafah
                             </h1>
-                            <p class="my-4 text-justify">This project is a school website with an academic system where
+                            <p class="my-4 text-justify dark:text-secondary">This project is a school website with an
+                                academic system where
                                 students can log in to view their grades and schedules. It provides secure access to
                                 personalized academic information and allows easy management by school administrators.
                             </p>
-                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4">
+                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4 dark:text-secondary">
                                 <div>#CodeIgniter</div>
                                 <div>#SchoolManagement</div>
                                 <div>#FullStack</div>
@@ -195,7 +234,7 @@
                             <div class="flex items-center justify-between border-t border-dashed border-primary">
                                 <div class="flex items-center my-2">
                                     <a target="_blank" href="https://siakadmtsalarafah.xyz/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
+                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
                                         <svg class="fill-current" stroke="currentColor" fill="currentColor"
                                             stroke-width="0" version="1.1" viewBox="0 0 16 16" height="18px"
                                             width="18px" xmlns="http://www.w3.org/2000/svg">
@@ -208,7 +247,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <p class="font-thin">May 2024</p>
+                                <p class="font-thin dark:text-secondary">May 2024</p>
                             </div>
                         </div>
                     </div>
@@ -217,13 +256,16 @@
                     <div class="w-full lg:w-1/2">
                         <div
                             class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1 class="font-semibold text-lg border-b border-dashed border-primary pb-4">Hospital
+                            <h1
+                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
+                                Hospital
                                 System: RSU. Mitra Sejati</h1>
-                            <p class="my-4 text-justify">Contributed to the Development of Key Features and Modules in
+                            <p class="my-4 text-justify dark:text-secondary">Contributed to the Development of Key
+                                Features and Modules in
                                 Mitra
                                 Sejati Hospital Management System. This comprehensive system efficiently handles all
                                 hospital processes, improving operational effectiveness and patient care.</p>
-                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4">
+                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4 dark:text-secondary">
                                 <div>#Native</div>
                                 <div>#HospitalSystem</div>
                                 <div>#FullStack</div>
@@ -232,7 +274,7 @@
                             <div class="flex items-center justify-between border-t border-dashed border-primary">
                                 <div class="flex items-center my-2">
                                     <a target="_blank" href="https://apps.rsmitrasejati.com/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
+                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
                                         <svg class="fill-current" stroke="currentColor" fill="currentColor"
                                             stroke-width="0" version="1.1" viewBox="0 0 16 16" height="18px"
                                             width="18px" xmlns="http://www.w3.org/2000/svg">
@@ -245,7 +287,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <p class="font-thin">April 2024</p>
+                                <p class="font-thin dark:text-secondary">April 2024</p>
                             </div>
                         </div>
                     </div>
@@ -254,13 +296,16 @@
                     <div class="w-full lg:w-1/2">
                         <div
                             class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1 class="font-semibold text-lg border-b border-dashed border-primary pb-4">Cabjari Labuhan
+                            <h1
+                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
+                                Cabjari Labuhan
                                 Deli</h1>
-                            <p class="my-4 text-justify">Contributed to the Development of Key Features and Modules in
+                            <p class="my-4 text-justify dark:text-secondary">Contributed to the Development of Key
+                                Features and Modules in
                                 Labuhan Deli District Attorney Branch. The system allows admins to manage content,
                                 including
                                 services, news, and employee profiles, with ease.</p>
-                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4">
+                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4 dark:text-secondary">
                                 <div>#Laravel</div>
                                 <div>#GovernmentProfile</div>
                                 <div>#BackEnd</div>
@@ -269,7 +314,7 @@
                             <div class="flex items-center justify-between border-t border-dashed border-primary">
                                 <div class="flex items-center my-2">
                                     <a target="_blank" href="https://cabjari-labuhandeli.kejaksaan.go.id/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
+                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
                                         <svg class="fill-current" stroke="currentColor" fill="currentColor"
                                             stroke-width="0" version="1.1" viewBox="0 0 16 16" height="18px"
                                             width="18px" xmlns="http://www.w3.org/2000/svg">
@@ -282,7 +327,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <p class="font-thin">Nov 2023</p>
+                                <p class="font-thin dark:text-secondary">Nov 2023</p>
                             </div>
                         </div>
                     </div>
@@ -291,13 +336,15 @@
                     <div class="w-full lg:w-1/2">
                         <div
                             class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1 class="font-semibold text-lg border-b border-dashed border-primary pb-4">Wildlife Park
+                            <h1
+                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
+                                Wildlife Park
                                 System: Medan Zoo</h1>
-                            <p class="my-4 text-justify">Make a innovation in the
+                            <p class="my-4 text-justify dark:text-secondary">Make a innovation in the
                                 development and improvement of public services at wildlife park attractions using the
                                 social
                                 trust path method.</p>
-                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4">
+                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4 dark:text-secondary">
                                 <div>#CodeIgniter</div>
                                 <div>#Special</div>
                                 <div>#UndergraduateThesis</div>
@@ -306,7 +353,7 @@
                                 <div class="flex items-center my-2">
                                     <a target="_blank"
                                         href="https://jurnal.murnisadar.ac.id/index.php/Tekinkom/article/view/295/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
+                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
                                         <svg class="fill-current" stroke="currentColor" fill="currentColor"
                                             stroke-width="0" version="1.1" viewBox="0 0 16 16" height="18px"
                                             width="18px" xmlns="http://www.w3.org/2000/svg">
@@ -319,7 +366,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <p class="font-thin">December 2021</p>
+                                <p class="font-thin dark:text-secondary">December 2021</p>
                             </div>
                         </div>
                     </div>
@@ -327,31 +374,45 @@
                 </div>
             </div>
         </section>
-        <!-- Recent Project Section End -->
+        <!-- Project Section End -->
+
+        <!-- Info Section Start -->
+        <section id="info" class="pt-36 pb-36 dark:bg-base">
+            <div class="container">
+                <div class="flex flex-wrap">
+
+                </div>
+            </div>
+        </section>
+        <!-- Info Section End -->
 
         <!-- Footer Section Start -->
-        <footer class=" bg-base pt-16 pb-6">
+        <footer id="contact" class="bg-base pt-36 pb-6">
             <div class="container">
                 <div class="flex flex-wrap text-secondary">
-                    <div class="w-full px-4 mb-12">
-                        <h1 class="font-bold text-xl">Contact</h1>
-                        <p class="font-thin" class="font-thin text-xs">muhammadalfandihasibuan@gmail.com</p>
-                        <p class="font-thin" class="font-thin text-xs">+62 89502602428 (WhatsApp Only)</p>
+                    <div class="w-full px-4 mb-12 lg:w-1/2">
+                        <h1 class="font-bold text-4xl">Get In Touch</h1>
+                        <h2 class="font-extralight">Always fell free to contact with me</h2>
+                    </div>
+                    <div class="w-full px-4 mb-12 lg:w-1/2 leading-relaxed">
+                        <h1 class="font-bold text-2xl">Contact</h1>
+                        <h2 class="">
+                            <a class="text-lg hover:text-primary" href="mailto:muhammadalfandihasibuan@gmail.com"
+                                target="_blank" rel="noopener noreferrer">Gmail</a>
+                        </h2>
+                        <h2>
+                            <a class="text-lg hover:text-primary" target="_blank" href="https://wa.me/+6289502602428"
+                                class="btn btn-lg my-font btn-light rounded">WhatsApp</a>
+                        </h2>
+                        <h2>
+                            <a class="text-lg hover:text-primary" target="_blank" href="https://t.me/alfandihasibuan"
+                                class="btn btn-lg my-font btn-light rounded">Telegram</a>
+
+                        </h2>
                     </div>
                 </div>
                 <div class="w-full pt-10 border-t border-primary">
                     <div class="flex items-center justify-center mb-5">
-                        <!-- LinkedIn SVG Start -->
-                        <a target="_blank" href="https://linkedin.com/in/alfandihasibuan/"
-                            class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-secondary border border-primary hover:bg-primary hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
-                            <svg class="fill-current" role="img" width="20px" role="img" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>LinkedIn</title>
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-                        <!-- LinkedIn SVG End -->
                         <!-- Github SVG Start -->
                         <a target="_blank" href="https://github.com/alfandihasibuan"
                             class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-secondary border border-primary hover:bg-primary">
@@ -363,6 +424,17 @@
                             </svg>
                         </a>
                         <!-- Github SVG End -->
+                        <!-- LinkedIn SVG Start -->
+                        <a target="_blank" href="https://linkedin.com/in/alfandihasibuan/"
+                            class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-secondary border border-primary hover:bg-primary hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
+                            <svg class="fill-current" role="img" width="20px" role="img" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>LinkedIn</title>
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <!-- LinkedIn SVG End -->
                         <!-- Notion SVG Start -->
                         <a target="_blank"
                             href="https://alfandi.notion.site/Hi-Welcome-to-my-notion-site-5ad25c7316824732875220145ca09b86"
@@ -398,15 +470,24 @@
                         </a>
                         <!-- Instagram SVG End -->
                     </div>
-                    <p class="text-secondary text-sm text-center">
+                    <p class="text-secondary text-xs text-center">
                         &copy;
                         <a href="https://alfandihasibuan.github.io" class="text-primary">Alfandi
                             Hasibuan</a>
                     </p>
+                    <p class="text-secondary text-xs text-center mt-2">Made with a cup of coffee ☕ and
+                        TailwindCSS</p>
                 </div>
             </div>
         </footer>
         <!-- Footer Section End -->
+
+        <!-- Back To Top Start -->
+        <a id="to-top" href="#home"
+            class="fixed justify-center items-center h-12 w-12 p-3 shadow-lg bg-primary hidden z-[9999] bottom-4 right-4 rounded-lg hover:animate-pulse">
+            <span class="block w-5 h-5 rotate-45 border-t-2 border-l-2 mt-2"></span>
+        </a>
+        <!-- Back To Top End -->
 
         <script src="public/js/script.js"></script>
     </div>
