@@ -10,6 +10,14 @@ window.onscroll = function () {
   }
 };
 
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  const content = document.querySelector(".content");
+
+  preloader.style.display = "none"; // Sembunyikan preloader
+  content.classList.remove("hidden"); // Tampilkan konten dengan menghapus kelas hidden
+});
+
 // Hamburger
 const hamburger = document.querySelector("#hamburger");
 const navMenu = document.querySelector("#nav-menu");

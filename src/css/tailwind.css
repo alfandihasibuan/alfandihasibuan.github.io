@@ -6,6 +6,44 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Preloader */
+.loadweb {
+  width: 100%;
+  height: 100%;
+  animation: stroke 5s infinite alternate;
+  stroke-width: 1;
+  stroke: #537466;
+  font-size: 55px;
+  background-color: #393e46;
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(109, 152, 134, 0);
+    stroke: rgba(83, 116, 102, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 1;
+  }
+  70% {
+    fill: rgba(109, 152, 134, 0);
+    stroke: rgba(83, 116, 102, 1);
+  }
+  80% {
+    fill: rgba(109, 152, 134, 0);
+    stroke: rgba(83, 116, 102, 1);
+    stroke-width: 2;
+  }
+  100% {
+    fill: rgba(109, 152, 134, 1);
+    stroke: rgba(83, 116, 102, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+/* Preloader End */
+
 .navbar-fixed {
   @apply fixed z-[9999] bg-white bg-opacity-80;
   backdrop-filter: blur(5px);
