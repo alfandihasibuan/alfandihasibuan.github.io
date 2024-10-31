@@ -5,31 +5,15 @@ window.onscroll = function () {
   const toTop = document.querySelector("#to-top");
 
   if (window.pageYOffset > fixedNav) {
-    header.classList.add("navbar-fixed");
-    toTop.classList.remove("hidden");
-    toTop.classList.add("flex");
+      header.classList.add("navbar-fixed");
+      toTop.classList.remove("hidden");
+      toTop.classList.add("flex");
   } else {
-    header.classList.remove("navbar-fixed");
-    toTop.classList.remove("flex");
-    toTop.classList.add("hidden");
+      header.classList.remove("navbar-fixed");
+      toTop.classList.remove("flex");
+      toTop.classList.add("hidden");
   }
 };
-
-// Preloader
-window.addEventListener("load", function () {
-  const preloader = document.getElementById("preloader");
-  const content = document.querySelector(".content");
-
-  // Tampilkan preloader dan sembunyikan konten
-  preloader.style.display = "block"; // Pastikan preloader terlihat
-  content.classList.add("hidden"); // Sembunyikan konten
-
-  // Setelah 2 detik (2000 ms), sembunyikan preloader dan tampilkan konten
-  setTimeout(function () {
-    preloader.style.display = "none"; // Sembunyikan preloader
-    content.classList.remove("hidden"); // Tampilkan konten
-  }, 5000); // 2000 ms = 2 detik
-});
 
 // Hamburger Menu
 const hamburger = document.querySelector("#hamburger");
@@ -40,68 +24,50 @@ hamburger.addEventListener("click", function () {
   navMenu.classList.toggle("hidden");
 });
 
-// Darkmode Toggle dengan Icon
-const lightIcon = document.getElementById('light-icon'); // perbaiki selector ke id
-const darkIcon = document.getElementById('dark-icon');   // perbaiki selector ke id
-const html = document.querySelector('html');
+// moving element
+const buttons = document.querySelectorAll(".interactive-button");
 
-// Fungsi untuk mengubah ke mode gelap
-function enableDarkMode() {
-  lightIcon.classList.add('hidden');
-  darkIcon.classList.remove('hidden');
-  html.classList.add('dark');
-  localStorage.theme = 'dark';
+buttons.forEach((button) => {
+  button.addEventListener("mousemove", (event) => {
+      const rect = button.getBoundingClientRect();
+      const x = event.clientX - rect.left - rect.width / 2;
+      const y = event.clientY - rect.top - rect.height / 2;
+
+      button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+  });
+
+  button.addEventListener("mouseleave", () => {
+      button.style.transform = "translate(0, 0)";
+  });
+});
+
+// typing effect
+const typingElement = document.querySelector(".typing-effect");
+const texts = ["TERIMA KASIH","ありがとう","THANK YOU","谢谢"];
+let textIndex = 0;
+let charIndex = 0;
+let typingSpeed = 100;
+let delayBetweenTexts = 3000;
+
+function typeText() {
+  if (charIndex < texts[textIndex].length) {
+      typingElement.textContent += texts[textIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(typeText, typingSpeed);
+  } else {
+      setTimeout(deleteText, delayBetweenTexts);
+  }
 }
 
-// Fungsi untuk mengubah ke mode terang
-function enableLightMode() {
-  darkIcon.classList.add('hidden');
-  lightIcon.classList.remove('hidden');
-  html.classList.remove('dark');
-  localStorage.theme = 'light';
+function deleteText() {
+  if (charIndex > 0) {
+      typingElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(deleteText, typingSpeed);
+  } else {
+      textIndex = (textIndex + 1) % texts.length;
+      setTimeout(typeText, typingSpeed);
+  }
 }
 
-// Cek apakah tema yang disimpan di localStorage atau sistem adalah dark mode
-const isDarkMode = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-// Setel icon dan theme berdasarkan status saat ini
-if (isDarkMode) {
-  enableDarkMode();
-} else {
-  enableLightMode();
-}
-
-// Event listener untuk ikon light mode
-lightIcon.addEventListener('click', enableDarkMode);
-
-// Event listener untuk ikon dark mode
-darkIcon.addEventListener('click', enableLightMode);
-
-function enableDarkMode() {
-  lightIcon.classList.add('icon-rotate-out');
-  darkIcon.classList.remove('hidden');
-  darkIcon.classList.add('icon-rotate-in');
-
-  setTimeout(() => {
-    lightIcon.classList.add('hidden');
-    lightIcon.classList.remove('icon-rotate-out');
-  }, 500); // Sesuaikan waktu dengan durasi animasi
-
-  html.classList.add('dark');
-  localStorage.theme = 'dark';
-}
-
-// Fungsi untuk mengubah ke mode terang dengan animasi
-function enableLightMode() {
-  darkIcon.classList.add('icon-rotate-out');
-  lightIcon.classList.remove('hidden');
-  lightIcon.classList.add('icon-rotate-in');
-
-  setTimeout(() => {
-    darkIcon.classList.add('hidden');
-    darkIcon.classList.remove('icon-rotate-out');
-  }, 500); // Sesuaikan waktu dengan durasi animasi
-
-  html.classList.remove('dark');
-  localStorage.theme = 'light';
-}
+typeText();

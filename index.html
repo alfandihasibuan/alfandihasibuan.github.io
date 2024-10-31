@@ -5,492 +5,1019 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alfandi Hasibuan</title>
+    <link rel="stylesheet" href="public/css/style.css">
+
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;1,200;1,400;1,600;1,700&display=swap"
         rel="stylesheet">
-    <link href="public/css/style.css" rel="stylesheet">
-    <script>
-        document.documentElement.classList.toggle(
-            'dark',
-            localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        )
-    </script>
 </head>
 
 <body>
-    <!-- Preloader Start -->
-    <!-- <div id="preloader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
-        <svg class="loadweb">
-            <text class="text-sm md:text-2xl" x="50%" y="50%" dy=".35em" text-anchor="middle">
-                Alfandi Hasibuan Portfolio
-            </text>
-        </svg>
-    </div> -->
-    <!-- Preloader End -->
+    <!-- Header Start -->
+    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+        <div class="container">
+            <div class="flex items-center justify-between relative">
+                <div class="px-4">
+                    <a href="#home" class="font-bold text-lg text-primary block py-6">alfandihasibuan</a>
+                </div>
+                <div class="flex items-center justify-center px-4">
+                    <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
+                        <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out"></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+                    </button>
 
-    <div class="content">
-        <!-- Header Start -->
-        <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
-            <div class="container">
-                <div class="flex items-center justify-between relative">
-                    <div class="px-4">
-                        <a href="#home" class="font-bold text-lg text-primary block py-6">alfandihasibuan</a>
-                    </div>
-                    <div class="flex items-center justify-center px-4">
-                        <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
-                            <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-                            <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                            <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
-                        </button>
-
-                        <nav id="nav-menu"
-                            class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full mt-2 lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-base lg:dark:bg-transparent">
-                            <ul class="block lg:flex">
-                                <li class="group">
-                                    <a href="#home"
-                                        class="text-base py-2 mx-8 flex group-hover:text-primary dark:text-secondary">Home</a>
-                                </li>
-                                <li class="group">
-                                    <a href="#projects"
-                                        class="text-base py-2 mx-8 flex group-hover:text-primary dark:text-secondary">Projects</a>
-                                </li>
-                                <li class="group">
-                                    <a href="#info"
-                                        class="text-base py-2 mx-8 flex group-hover:text-primary dark:text-secondary">Info</a>
-                                </li>
-                                <li class="group">
-                                    <a href="#contact"
-                                        class="text-base py-2 mx-8 flex group-hover:text-primary dark:text-secondary">Contact</a>
-                                </li>
-                                <li class="flex mt-3 lg:mt-0 items-center pl-8">
-                                    <div class="flex items-center mr-4">
-                                        <!-- Light Mode Icon -->
-                                        <svg id="light-icon"
-                                            class="w-6 h-6 text-yellow-500 cursor-pointer transition transform duration-300 ease-in-out"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 2v2m0 16v2m4.22-4.22l1.42 1.42M5.64 5.64l1.42 1.42M18 12h2m-16 0H2m4.22 4.22l-1.42 1.42M18.36 5.64l-1.42 1.42M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                                        </svg>
-
-                                        <!-- Dark Mode Icon -->
-                                        <svg id="dark-icon"
-                                            class="w-6 h-6 text-primary cursor-pointer transition transform duration-300 ease-in-out hidden"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 3v1M12 20v1M5.64 5.64l.71.71m12-12l.71.71M16.95 12h1M6 12H5M3 12h1m16 0h1m-1.64 5.64l-.71.71m-12-12l-.71.71M12 4.22a7.78 7.78 0 000 15.56c3.61 0 6.78-2.92 7.56-6.44a7.763 7.763 0 00-7.56-9.12z" />
-                                        </svg>
-                                    </div>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <nav id="nav-menu"
+                        class="hidden absolute py-5 bg-slate-700 bg-opacity-90 shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full mt-2 lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                        <ul class="block lg:flex">
+                            <li class="interactive-button group">
+                                <a href="#home" class="font-light text-secondary py-2 mx-8 flex items-center group-hover:text-primary transition-all duration-300 
+                                    after:content-['→'] after:opacity-0 after:-translate-x-2 group-hover:font-semibold
+                                    group-hover:after:opacity-100 group-hover:after:translate-x-0 
+                                    after:ml-2 after:transition-all after:duration-300">Home</a>
+                            </li>
+                            <li class="interactive-button group">
+                                <a href="#projects" class="text-secondary py-2 mx-8 flex items-center group-hover:text-primary transition-all duration-300 
+                                    after:content-['→'] after:opacity-0 after:-translate-x-2 group-hover:font-semibold
+                                    group-hover:after:opacity-100 group-hover:after:translate-x-0 
+                                    after:ml-2 after:transition-all after:duration-300">Projects</a>
+                            </li>
+                            <li class="interactive-button group">
+                                <a href="#profile" class="text-secondary py-2 mx-8 flex items-center group-hover:text-primary transition-all duration-300 
+                                    after:content-['→'] after:opacity-0 after:-translate-x-2 group-hover:font-semibold
+                                    group-hover:after:opacity-100 group-hover:after:translate-x-0 
+                                    after:ml-2 after:transition-all after:duration-300">Profile</a>
+                            </li>
+                            <li class="interactive-button group">
+                                <a href="#contact" class="text-secondary py-2 mx-8 flex items-center group-hover:text-primary transition-all duration-300 
+                                    after:content-['→'] after:opacity-0 after:-translate-x-2 group-hover:font-semibold
+                                    group-hover:after:opacity-100 group-hover:after:translate-x-0 
+                                    after:ml-2 after:transition-all after:duration-300">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-        </header>
-        <!-- Header End -->
+        </div>
+    </header>
+    <!-- Header End -->
 
-        <!-- Hero Section Start -->
-        <section id="home" class="pt-36 pb-36 dark:bg-base">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <div class="w-full self-center px-4 lg:w-1/2">
-                        <h1 class="font-semibold text-2xl lg:text-4xl dark:text-secondary">Alfandi Hasibuan</h1>
-                        <h2 class="font-extralight text-md lg:text-2xl dark:text-secondary">Full Stack Web Developer
-                        </h2>
-                    </div>
-                    <div class="w-full self-end px-4 lg:w-1/2">
-                        <div class="relative mt-10 ">
-                            <p class="py-8 leading-relaxed text-justify lg:text-lg dark:text-secondary">Born in 1999 in
-                                Pematang Siantar,
-                                Indonesia, I am a computer science graduate specializing in Information Systems. I’ve
-                                gained
-                                hands-on experience in software development and programming during my studies, which
-                                I’ve
-                                applied as a freelance web developer. My focus is on delivering high-quality, tailored
-                                digital
-                                solutions, earning me a reputation for reliability and excellence. I’m driven by a
-                                passion
-                                for
-                                technology and always eager to tackle new challenges.</p>
-                            <a href="public/files/resume.pdf" download="resume.pdf"
-                                class="text-base font-semibold text-secondary flex flex-nowrap w-1/2 items-center justify-center gap-3 bg-primary py-3 px-8 rounded-lg hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out focus:ring focus:ring-primary">Resume
-                                <span><svg width="18px" height="18px" viewBox="0 0 14 14" focusable="false">
-                                        <path fill="currentColor"
-                                            d="M11.2857,6.05714 L10.08571,4.85714 L7.85714,7.14786 L7.85714,1 L6.14286,1 L6.14286,7.14786 L3.91429,4.85714 L2.71429,6.05714 L7,10.42857 L11.2857,6.05714 Z M1,11.2857 L1,13 L13,13 L13,11.2857 L1,11.2857 Z">
-                                        </path>
-                                    </svg></span>
+    <!-- Hero Section Start -->
+    <section id="home" class="bg-black text-secondary pt-36 pb-36">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full">
+                    <h1 class="font-bold text-6xl">Alfandi Hasibuan</h1>
+                    <h2 class="font-extralight text-3xl">Fullstack Developer</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Projects Section Start -->
+    <section id="projects" class="bg-black text-secondary pt-36 pb-36">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full">
+                    <h1 class="font-bold text-6xl">Projects</h1>
+                    <h2 class="font-extralight text-3xl">Featured Works</h2>
+                </div>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="mt-20 bg-base text-black rounded-lg shadow-lg">
+                <div class="relative">
+                    <img src="public/img/p-4.png" alt="Project Image" class="w-full h-96 object-cover rounded-lg">
+                    <div
+                        class="absolute bottom-0 left-0 bg-base bg-opacity-60 w-full p-4 flex justify-between items-center text-white rounded-b-lg">
+                        <div class="">
+                            <a href="https://vendiditstore.com/" target="_blank"
+                                class="text-2xl font-semibold flex items-center group">
+                                Vendit Store
+                                <svg class="ml-2 fill-current text-secondary w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
                             </a>
+                            <p class="text-sm">September 2024</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Hero Section End -->
-
-        <!-- Project Section Start -->
-        <section id="projects" class="pt-36 pb-36 bg-slate-200 dark:bg-base dark:bg-opacity-90">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <div class="w-full px-4 mb-4">
-                        <h1 class="font-semibold text-2xl md:text-2xl dark:text-secondary">Projects</h1>
-                        <h2 class="font-extralight text-sm md:text-lg dark:text-secondary">What I Did ?</h2>
-                    </div>
-                    <!-- Project 1 Start -->
-                    <div class="w-full lg:w-1/2">
-                        <div
-                            class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1
-                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
-                                Vendidit Store
-                            </h1>
-                            <p class="my-4 text-justify dark:text-secondary">The system provides a store management
-                                platform that allows
-                                users
-                                to view available products. Admins can record incoming and outgoing goods and generate
-                                comprehensive inventory reports according to business needs.</p>
-                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4 dark:text-secondary">
-                                <div>#CodeIgniter</div>
-                                <div>#StoreManagement</div>
-                                <div>#FullStack</div>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-dashed border-primary">
-                                <div class="flex items-center my-2">
-                                    <a target="_blank" href="https://vendiditstore.com/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
-                                        <svg class="fill-current" stroke="currentColor" fill="currentColor"
-                                            stroke-width="0" version="1.1" viewBox="0 0 16 16" height="18px"
-                                            width="18px" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M6.879 9.934c-0.208 0-0.416-0.079-0.575-0.238-1.486-1.486-1.486-3.905 0-5.392l3-3c0.72-0.72 1.678-1.117 2.696-1.117s1.976 0.397 2.696 1.117c1.486 1.487 1.486 3.905 0 5.392l-1.371 1.371c-0.317 0.317-0.832 0.317-1.149 0s-0.317-0.832 0-1.149l1.371-1.371c0.853-0.853 0.853-2.241 0-3.094-0.413-0.413-0.963-0.641-1.547-0.641s-1.134 0.228-1.547 0.641l-3 3c-0.853 0.853-0.853 2.241 0 3.094 0.317 0.317 0.317 0.832 0 1.149-0.159 0.159-0.367 0.238-0.575 0.238z">
-                                            </path>
-                                            <path
-                                                d="M4 15.813c-1.018 0-1.976-0.397-2.696-1.117-1.486-1.486-1.486-3.905 0-5.392l1.371-1.371c0.317-0.317 0.832-0.317 1.149 0s0.317 0.832 0 1.149l-1.371 1.371c-0.853 0.853-0.853 2.241 0 3.094 0.413 0.413 0.962 0.641 1.547 0.641s1.134-0.228 1.547-0.641l3-3c0.853-0.853 0.853-2.241 0-3.094-0.317-0.317-0.317-0.832 0-1.149s0.832-0.317 1.149 0c1.486 1.486 1.486 3.905 0 5.392l-3 3c-0.72 0.72-1.678 1.117-2.696 1.117z">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <p class="font-thin dark:text-secondary">September 2024</p>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-4 mb-4 lg:gap-0">
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold text-secondary">RESPONSIBILITIES</h4>
+                            <p class="text-secondary">Fullstack Developer</p>
+                        </div>
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold text-secondary">TECH STACK</h4>
+                            <div class="flex space-x-4 text-secondary">
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for CodeIgniter -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
+                                    </svg>
+                                    <span>CodeIgniter</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for Bootstrap -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z" />
+                                    </svg>
+                                    <span>Bootstrap</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for MySQL -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z" />
+                                    </svg>
+                                    <span>MySQL</span>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <!-- Project 1 End -->
-                    <!-- Project 2 Start -->
-                    <div class="w-full lg:w-1/2">
-                        <div
-                            class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1
-                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
+                    <!-- Short Description -->
+                    <div>
+                        <h4 class="font-semibold text-secondary">SHORT DESCRIPTION</h4>
+                        <p class="text-secondary mt-2">
+                            The system provides a store management platform that allows users to view available
+                            products. Admins can record incoming and outgoing goods and generate comprehensive inventory
+                            reports according to business needs. This platform streamlines daily operations by giving
+                            real-time insights into stock levels, minimizing the risk of overstocking or running out of
+                            items. Additionally, it helps in tracking product movement and identifying popular items,
+                            which supports better decision-making for purchasing and sales strategies. The platform’s
+                            user-friendly interface also reduces training time, making it accessible for employees of
+                            all levels to efficiently manage inventory tasks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="mt-20 bg-white text-black rounded-lg shadow-lg">
+                <div class="relative">
+                    <img src="public/img/" alt="Project Image" class="w-full h-96 object-cover rounded-lg">
+                    <div
+                        class="absolute bottom-0 left-0 bg-base bg-opacity-60 w-full p-4 flex justify-between items-center text-white rounded-b-lg">
+                        <div class="">
+                            <a href="https://alfandi.notion.site/Notaris-App-1286f4195b86807fa511c51746e9d3fe?pvs=4/"
+                                target="_blank" class="text-2xl font-semibold flex items-center group">
                                 Notaris App
-                            </h1>
-                            <p class="my-4 text-justify dark:text-secondary">Applications that are used to manage file
-                                data and file
-                                archives in
-                                notary offices can be managed dynamically by each user.</p>
-                            <div class="flex flex-wrap font-extralight lg:space-x-2 mb-4 dark:text-secondary">
-                                <div>#Flutter</div>
-                                <div>#ManagementApp</div>
-                                <div>#FullStack</div>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-dashed border-primary">
-                                <div class="flex items-center my-2">
-                                    <a target="_blank"
-                                        href="https://alfandi.notion.site/Notaris-App-1286f4195b86807fa511c51746e9d3fe?pvs=4/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
-                                        <svg class="fill-current" role="img" width="21px" role="img" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <title>Notion</title>
-                                            <path
-                                                d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z" />
-                                        </svg>
-                                    </a>
-                                </div>
-                                <p class="font-thin dark:text-secondary">August 2024</p>
+                                <svg class="ml-2 fill-current text-secondary w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </a>
+                            <p class="text-sm">August 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-4 mb-4 lg:gap-0">
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold">RESPONSIBILITIES</h4>
+                            <p class="text-gray-600">Fullstack Developer</p>
+                        </div>
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold">TECH STACK</h4>
+                            <div class="flex space-x-4 text-gray-600">
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for CodeIgniter -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z" />
+                                    </svg>
+                                    <span>Flutter</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for Bootstrap -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z" />
+                                    </svg>
+                                    <span>Laravel</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for MySQL -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z" />
+                                    </svg>
+                                    <span>MySQL</span>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <!-- Project 2 End -->
-                    <!-- Project 3 Start -->
-                    <div class="w-full lg:w-1/2">
-                        <div
-                            class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between dark:text-secondary">
-                            <h1
-                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
-                                MTs Al-Arafah
-                            </h1>
-                            <p class="my-4 text-justify dark:text-secondary">This project is a school website with an
-                                academic system where
-                                students can log in to view their grades and schedules. It provides secure access to
-                                personalized academic information and allows easy management by school administrators.
-                            </p>
-                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4 dark:text-secondary">
-                                <div>#CodeIgniter</div>
-                                <div>#SchoolManagement</div>
-                                <div>#FullStack</div>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-dashed border-primary">
-                                <div class="flex items-center my-2">
-                                    <a target="_blank" href="https://siakadmtsalarafah.xyz/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
-                                        <svg class="fill-current" stroke="currentColor" fill="currentColor"
-                                            stroke-width="0" version="1.1" viewBox="0 0 16 16" height="18px"
-                                            width="18px" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M6.879 9.934c-0.208 0-0.416-0.079-0.575-0.238-1.486-1.486-1.486-3.905 0-5.392l3-3c0.72-0.72 1.678-1.117 2.696-1.117s1.976 0.397 2.696 1.117c1.486 1.487 1.486 3.905 0 5.392l-1.371 1.371c-0.317 0.317-0.832 0.317-1.149 0s-0.317-0.832 0-1.149l1.371-1.371c0.853-0.853 0.853-2.241 0-3.094-0.413-0.413-0.963-0.641-1.547-0.641s-1.134 0.228-1.547 0.641l-3 3c-0.853 0.853-0.853 2.241 0 3.094 0.317 0.317 0.317 0.832 0 1.149-0.159 0.159-0.367 0.238-0.575 0.238z">
-                                            </path>
-                                            <path
-                                                d="M4 15.813c-1.018 0-1.976-0.397-2.696-1.117-1.486-1.486-1.486-3.905 0-5.392l1.371-1.371c0.317-0.317 0.832-0.317 1.149 0s0.317 0.832 0 1.149l-1.371 1.371c-0.853 0.853-0.853 2.241 0 3.094 0.413 0.413 0.962 0.641 1.547 0.641s1.134-0.228 1.547-0.641l3-3c0.853-0.853 0.853-2.241 0-3.094-0.317-0.317-0.317-0.832 0-1.149s0.832-0.317 1.149 0c1.486 1.486 1.486 3.905 0 5.392l-3 3c-0.72 0.72-1.678 1.117-2.696 1.117z">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <p class="font-thin dark:text-secondary">May 2024</p>
+                    <!-- Short Description -->
+                    <div>
+                        <h4 class="font-semibold">SHORT DESCRIPTION</h4>
+                        <p class="text-gray-600 mt-2">
+                            Applications that are used to manage file data and file archives in notary offices can be
+                            managed dynamically by each user. Designed as an Android application, it provides a
+                            mobile-friendly interface that allows notary staff to access and organize files on the go.
+                            The app supports easy document retrieval, categorization, and secure storage directly from
+                            their mobile devices. With push notifications and offline access, users can stay updated on
+                            file statuses and continue their work even without an internet connection, enhancing
+                            productivity and accessibility in any setting. To streamline the backend operations, the
+                            application utilizes Laravel as an API, ensuring efficient data handling and seamless
+                            integration with existing systems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="mt-20 bg-white text-black rounded-lg shadow-lg">
+                <div class="relative">
+                    <img src="public/img/" alt="Project Image" class="w-full h-96 object-cover rounded-lg">
+                    <div
+                        class="absolute bottom-0 left-0 bg-base bg-opacity-60 w-full p-4 flex justify-between items-center text-white rounded-b-lg">
+                        <div class="">
+                            <a href="https://siakadmtsalarafah.xyz/" target="_blank"
+                                class="text-2xl font-semibold flex items-center group">
+                                Academic System: MTs Al-Arafah
+                                <svg class="ml-2 fill-current text-secondary w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </a>
+                            <p class="text-sm">May 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-4 mb-4 lg:gap-0">
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold">RESPONSIBILITIES</h4>
+                            <p class="text-gray-600">Fullstack Developer</p>
+                        </div>
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold">TECH STACK</h4>
+                            <div class="flex space-x-4 text-gray-600">
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for CodeIgniter -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
+                                    </svg>
+                                    <span>CodeIgniter</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for Bootstrap -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z" />
+                                    </svg>
+                                    <span>Bootstrap</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for MySQL -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z" />
+                                    </svg>
+                                    <span>MySQL</span>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <!-- Project 3 End -->
-                    <!-- Project 4 Start -->
-                    <div class="w-full lg:w-1/2">
-                        <div
-                            class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1
-                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
-                                Hospital
-                                System: RSU. Mitra Sejati</h1>
-                            <p class="my-4 text-justify dark:text-secondary">Contributed to the Development of Key
-                                Features and Modules in
-                                Mitra
-                                Sejati Hospital Management System. This comprehensive system efficiently handles all
-                                hospital processes, improving operational effectiveness and patient care.</p>
-                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4 dark:text-secondary">
-                                <div>#Native</div>
-                                <div>#HospitalSystem</div>
-                                <div>#FullStack</div>
-                                <div>#Contributor</div>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-dashed border-primary">
-                                <div class="flex items-center my-2">
-                                    <a target="_blank" href="https://apps.rsmitrasejati.com/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
-                                        <svg class="fill-current" stroke="currentColor" fill="currentColor"
-                                            stroke-width="0" version="1.1" viewBox="0 0 16 16" height="18px"
-                                            width="18px" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M6.879 9.934c-0.208 0-0.416-0.079-0.575-0.238-1.486-1.486-1.486-3.905 0-5.392l3-3c0.72-0.72 1.678-1.117 2.696-1.117s1.976 0.397 2.696 1.117c1.486 1.487 1.486 3.905 0 5.392l-1.371 1.371c-0.317 0.317-0.832 0.317-1.149 0s-0.317-0.832 0-1.149l1.371-1.371c0.853-0.853 0.853-2.241 0-3.094-0.413-0.413-0.963-0.641-1.547-0.641s-1.134 0.228-1.547 0.641l-3 3c-0.853 0.853-0.853 2.241 0 3.094 0.317 0.317 0.317 0.832 0 1.149-0.159 0.159-0.367 0.238-0.575 0.238z">
-                                            </path>
-                                            <path
-                                                d="M4 15.813c-1.018 0-1.976-0.397-2.696-1.117-1.486-1.486-1.486-3.905 0-5.392l1.371-1.371c0.317-0.317 0.832-0.317 1.149 0s0.317 0.832 0 1.149l-1.371 1.371c-0.853 0.853-0.853 2.241 0 3.094 0.413 0.413 0.962 0.641 1.547 0.641s1.134-0.228 1.547-0.641l3-3c0.853-0.853 0.853-2.241 0-3.094-0.317-0.317-0.317-0.832 0-1.149s0.832-0.317 1.149 0c1.486 1.486 1.486 3.905 0 5.392l-3 3c-0.72 0.72-1.678 1.117-2.696 1.117z">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <p class="font-thin dark:text-secondary">April 2024</p>
+                    <!-- Short Description -->
+                    <div>
+                        <h4 class="font-semibold">SHORT DESCRIPTION</h4>
+                        <p class="text-gray-600 mt-2">
+                            This project is a comprehensive school website designed to support an academic system where
+                            students can securely log in to access their grades, schedules, and other essential academic
+                            information. The platform offers a user-friendly interface that allows students to track
+                            their progress and stay organized with their coursework. Additionally, it provides features
+                            for easy management by school administrators, enabling them to update student records,
+                            manage course offerings, and communicate important announcements effectively. With robust
+                            security measures in place, the website ensures that all personal and academic data remains
+                            confidential and accessible only to authorized users. Overall, this project aims to enhance
+                            the educational experience by facilitating better communication and organization within the
+                            school community.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="mt-20 bg-white text-black rounded-lg shadow-lg">
+                <div class="relative">
+                    <img src="public/img/" alt="Project Image" class="w-full h-96 object-cover rounded-lg">
+                    <div
+                        class="absolute bottom-0 left-0 bg-base bg-opacity-60 w-full p-4 flex justify-between items-center text-white rounded-b-lg">
+                        <div class="">
+                            <a href="https://apps.rsmitrasejati.com/auth/" target="_blank"
+                                class="text-2xl font-semibold flex items-center group">
+                                Hospital System: RSU. Mitra Sejati
+                                <svg class="ml-2 fill-current text-secondary w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </a>
+                            <p class="text-sm">April 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-4 mb-4 lg:gap-0">
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold">RESPONSIBILITIES</h4>
+                            <p class="text-gray-600">Fullstack Developer</p>
+                        </div>
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold">TECH STACK</h4>
+                            <div class="flex space-x-4 text-gray-600">
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for CodeIgniter -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z" />
+                                    </svg>
+                                    <span>PHP</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for Bootstrap -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z" />
+                                    </svg>
+                                    <span>Bootstrap</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for MySQL -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z" />
+                                    </svg>
+                                    <span>MySQL</span>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <!-- Project 4 End -->
-                    <!-- Project 5 Start -->
-                    <div class="w-full lg:w-1/2">
-                        <div
-                            class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1
-                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
-                                Cabjari Labuhan
-                                Deli</h1>
-                            <p class="my-4 text-justify dark:text-secondary">Contributed to the Development of Key
-                                Features and Modules in
-                                Labuhan Deli District Attorney Branch. The system allows admins to manage content,
-                                including
-                                services, news, and employee profiles, with ease.</p>
-                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4 dark:text-secondary">
-                                <div>#Laravel</div>
-                                <div>#GovernmentProfile</div>
-                                <div>#BackEnd</div>
-                                <div>#Contributor</div>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-dashed border-primary">
-                                <div class="flex items-center my-2">
-                                    <a target="_blank" href="https://cabjari-labuhandeli.kejaksaan.go.id/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
-                                        <svg class="fill-current" stroke="currentColor" fill="currentColor"
-                                            stroke-width="0" version="1.1" viewBox="0 0 16 16" height="18px"
-                                            width="18px" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M6.879 9.934c-0.208 0-0.416-0.079-0.575-0.238-1.486-1.486-1.486-3.905 0-5.392l3-3c0.72-0.72 1.678-1.117 2.696-1.117s1.976 0.397 2.696 1.117c1.486 1.487 1.486 3.905 0 5.392l-1.371 1.371c-0.317 0.317-0.832 0.317-1.149 0s-0.317-0.832 0-1.149l1.371-1.371c0.853-0.853 0.853-2.241 0-3.094-0.413-0.413-0.963-0.641-1.547-0.641s-1.134 0.228-1.547 0.641l-3 3c-0.853 0.853-0.853 2.241 0 3.094 0.317 0.317 0.317 0.832 0 1.149-0.159 0.159-0.367 0.238-0.575 0.238z">
-                                            </path>
-                                            <path
-                                                d="M4 15.813c-1.018 0-1.976-0.397-2.696-1.117-1.486-1.486-1.486-3.905 0-5.392l1.371-1.371c0.317-0.317 0.832-0.317 1.149 0s0.317 0.832 0 1.149l-1.371 1.371c-0.853 0.853-0.853 2.241 0 3.094 0.413 0.413 0.962 0.641 1.547 0.641s1.134-0.228 1.547-0.641l3-3c0.853-0.853 0.853-2.241 0-3.094-0.317-0.317-0.317-0.832 0-1.149s0.832-0.317 1.149 0c1.486 1.486 1.486 3.905 0 5.392l-3 3c-0.72 0.72-1.678 1.117-2.696 1.117z">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <p class="font-thin dark:text-secondary">Nov 2023</p>
+                    <!-- Short Description -->
+                    <div>
+                        <h4 class="font-semibold">SHORT DESCRIPTION</h4>
+                        <p class="text-gray-600 mt-2">
+                            Details of this project cannot be shared due to the attachment to a Non-disclosure Agreement
+                            (NDA).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="mt-20 bg-white text-black rounded-lg shadow-lg">
+                <div class="relative">
+                    <img src="public/img/" alt="Project Image" class="w-full h-96 object-cover rounded-lg">
+                    <div
+                        class="absolute bottom-0 left-0 bg-base bg-opacity-60 w-full p-4 flex justify-between items-center text-white rounded-b-lg">
+                        <div class="">
+                            <a href="https://cabjari-labuhandeli.kejaksaan.go.id/" target="_blank"
+                                class="text-2xl font-semibold flex items-center group">
+                                Information System: Deli Serdang publicrict Attorney Branch in Labuhan Deli
+                                <svg class="ml-2 fill-current text-secondary w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </a>
+                            <p class="text-sm">Nov 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-4 mb-4 lg:gap-0">
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold">RESPONSIBILITIES</h4>
+                            <p class="text-gray-600">Fullstack Developer</p>
+                        </div>
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold">TECH STACK</h4>
+                            <div class="flex space-x-4 text-gray-600">
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for CodeIgniter -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z" />
+                                    </svg>
+                                    <span>Laravel</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for Bootstrap -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z" />
+                                    </svg>
+                                    <span>Bootstrap</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for MySQL -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z" />
+                                    </svg>
+                                    <span>MySQL</span>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <!-- Project 5 End -->
-                    <!-- Project 6 Start -->
-                    <div class="w-full lg:w-1/2">
-                        <div
-                            class="px-4 py-4 mx-4 my-4 border-dashed border-2 rounded-lg border-primary hover:border-solid hover:scale-105 transition-all duration-300 ease-in-out min-h-[320px] flex flex-col justify-between">
-                            <h1
-                                class="font-semibold text-lg border-b border-dashed border-primary pb-4 dark:text-secondary">
+                    <!-- Short Description -->
+                    <div>
+                        <h4 class="font-semibold">SHORT DESCRIPTION</h4>
+                        <p class="text-gray-600 mt-2">
+                            Details of this project cannot be shared due to the attachment to a Non-disclosure Agreement
+                            (NDA).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="mt-20 bg-white text-black rounded-lg shadow-lg">
+                <div class="relative">
+                    <img src="public/img/" alt="Project Image" class="w-full h-96 object-cover rounded-lg">
+                    <div
+                        class="absolute bottom-0 left-0 bg-base bg-opacity-60 w-full p-4 flex justify-between items-center text-white rounded-b-lg">
+                        <div class="">
+                            <a href="https://jurnal.murnisadar.ac.id/index.php/Tekinkom/article/view/295/"
+                                target="_blank" class="text-2xl font-semibold flex items-center group">
                                 Wildlife Park
-                                System: Medan Zoo</h1>
-                            <p class="my-4 text-justify dark:text-secondary">Make a innovation in the
-                                development and improvement of public services at wildlife park attractions using the
-                                social
-                                trust path method.</p>
-                            <div class="flex flex-wrap font-extralight text-sm lg:space-x-2 mb-4 dark:text-secondary">
-                                <div>#CodeIgniter</div>
-                                <div>#Special</div>
-                                <div>#UndergraduateThesis</div>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-dashed border-primary">
-                                <div class="flex items-center my-2">
-                                    <a target="_blank"
-                                        href="https://jurnal.murnisadar.ac.id/index.php/Tekinkom/article/view/295/"
-                                        class="w-10 h-10 mr-3 rounded-full flex justify-center items-center hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out dark:text-secondary">
-                                        <svg class="fill-current" stroke="currentColor" fill="currentColor"
-                                            stroke-width="0" version="1.1" viewBox="0 0 16 16" height="18px"
-                                            width="18px" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M6.879 9.934c-0.208 0-0.416-0.079-0.575-0.238-1.486-1.486-1.486-3.905 0-5.392l3-3c0.72-0.72 1.678-1.117 2.696-1.117s1.976 0.397 2.696 1.117c1.486 1.487 1.486 3.905 0 5.392l-1.371 1.371c-0.317 0.317-0.832 0.317-1.149 0s-0.317-0.832 0-1.149l1.371-1.371c0.853-0.853 0.853-2.241 0-3.094-0.413-0.413-0.963-0.641-1.547-0.641s-1.134 0.228-1.547 0.641l-3 3c-0.853 0.853-0.853 2.241 0 3.094 0.317 0.317 0.317 0.832 0 1.149-0.159 0.159-0.367 0.238-0.575 0.238z">
-                                            </path>
-                                            <path
-                                                d="M4 15.813c-1.018 0-1.976-0.397-2.696-1.117-1.486-1.486-1.486-3.905 0-5.392l1.371-1.371c0.317-0.317 0.832-0.317 1.149 0s0.317 0.832 0 1.149l-1.371 1.371c-0.853 0.853-0.853 2.241 0 3.094 0.413 0.413 0.962 0.641 1.547 0.641s1.134-0.228 1.547-0.641l3-3c0.853-0.853 0.853-2.241 0-3.094-0.317-0.317-0.317-0.832 0-1.149s0.832-0.317 1.149 0c1.486 1.486 1.486 3.905 0 5.392l-3 3c-0.72 0.72-1.678 1.117-2.696 1.117z">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <p class="font-thin dark:text-secondary">December 2021</p>
+                                System: Medan Zoo
+                                <svg class="ml-2 fill-current text-secondary w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </a>
+                            <p class="text-sm">December 2021 | Undergraduate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-4 mb-4 lg:gap-0">
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold">RESPONSIBILITIES</h4>
+                            <p class="text-gray-600">Fullstack Developer</p>
+                        </div>
+                        <div class="w-full lg:w-1/2">
+                            <h4 class="font-semibold">TECH STACK</h4>
+                            <div class="flex space-x-4 text-gray-600">
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for CodeIgniter -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
+                                    </svg>
+                                    <span>CodeIgniter</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for Bootstrap -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z" />
+                                    </svg>
+                                    <span>Bootstrap</span>
+                                </span>
+                                <span class="flex items-center space-x-1">
+                                    <!-- Icon for MySQL -->
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z" />
+                                    </svg>
+                                    <span>MySQL</span>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <!-- Project 6 End -->
-                </div>
-            </div>
-        </section>
-        <!-- Project Section End -->
-
-        <!-- Info Section Start -->
-        <section id="info" class="pt-36 pb-36 dark:bg-base">
-            <div class="container">
-                <div class="flex flex-wrap">
-
-                </div>
-            </div>
-        </section>
-        <!-- Info Section End -->
-
-        <!-- Footer Section Start -->
-        <footer id="contact" class="bg-base pt-36 pb-6">
-            <div class="container">
-                <div class="flex flex-wrap text-secondary">
-                    <div class="w-full px-4 mb-12 lg:w-1/2">
-                        <h1 class="font-bold text-4xl">Get In Touch</h1>
-                        <h2 class="font-extralight">Always fell free to contact with me</h2>
-                    </div>
-                    <div class="w-full px-4 mb-12 lg:w-1/2 leading-relaxed">
-                        <h1 class="font-bold text-2xl">Contact</h1>
-                        <h2 class="">
-                            <a class="text-lg hover:text-primary" href="mailto:muhammadalfandihasibuan@gmail.com"
-                                target="_blank" rel="noopener noreferrer">Gmail</a>
-                        </h2>
-                        <h2>
-                            <a class="text-lg hover:text-primary" target="_blank" href="https://wa.me/+6289502602428"
-                                class="btn btn-lg my-font btn-light rounded">WhatsApp</a>
-                        </h2>
-                        <h2>
-                            <a class="text-lg hover:text-primary" target="_blank" href="https://t.me/alfandihasibuan"
-                                class="btn btn-lg my-font btn-light rounded">Telegram</a>
-
-                        </h2>
+                    <!-- Short Description -->
+                    <div>
+                        <h4 class="font-semibold">SHORT DESCRIPTION</h4>
+                        <p class="text-gray-600 mt-2">
+                            The system provides a store management platform that allows users to view available
+                            products. Admins can record incoming and outgoing goods and generate comprehensive inventory
+                            reports according to business needs. This platform streamlines daily operations by giving
+                            real-time insights into stock levels, minimizing the risk of overstocking or running out of
+                            items. Additionally, it helps in tracking product movement and identifying popular items,
+                            which supports better decision-making for purchasing and sales strategies. The platform’s
+                            user-friendly interface also reduces training time, making it accessible for employees of
+                            all levels to efficiently manage inventory tasks.</p>
                     </div>
                 </div>
-                <div class="w-full pt-10 border-t border-primary">
-                    <div class="flex items-center justify-center mb-5">
-                        <!-- Github SVG Start -->
-                        <a target="_blank" href="https://github.com/alfandihasibuan"
-                            class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-secondary border border-primary hover:bg-primary">
-                            <svg class="fill-current" role="img" width="24px" viewBox="0 0 24 24"
+            </div>
+
+            <div class="flex flex-wrap justify-center mt-20 mb-20 group">
+                <a href="#" target="_blank" class="text-2xl font-light flex items-center">
+                    <p>See <span class="font-semibold">more</span> in <span class="font-semibold">my archive</span></p>
+                    <svg class="ml-2 fill-current text-secondary w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                        <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <!-- Projects Section End -->
+
+    <!-- Profile Section Start -->
+    <section id="profile" class="bg-black text-secondary pt-36 pb-36">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full">
+                    <h1 class="font-bold text-6xl">Profile</h1>
+                    <h2 class="font-extralight text-3xl">About Me</h2>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 mt-20 lg:grid-cols-2 gap-20 items-center">
+                <div class="flex justify-center">
+                    <img src="public/img/alfandi-removebg.png"
+                        class="interactive-button w-full max-w-sm rounded-lg shadow-lg" alt="Profile Image">
+                </div>
+                <div>
+                    <p class="text-2xl font-light leading-relaxed">
+                        Born in 1999 in Pematang Siantar, Indonesia, I am a computer science graduate specializing in
+                        <span class="font-semibold">Information Systems</span>.
+                        I’ve gained hands-on experience in <span class="font-semibold">software development</span> and
+                        <span class="font-semibold">programming</span> during my studies, which
+                        I’ve applied as
+                        a freelance <span class="font-semibold">fullstack developer</span>. My focus is on delivering
+                        <span class="font-semibold">high-quality</span>, <span class="font-semibold">tailored
+                            digital solutions</span>,
+                        earning me a
+                        reputation for reliability and excellence. I’m driven by a passion for technology and always
+                        eager to <span class="font-semibold">tackle new challenges</span>.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-wrap mt-20 mb-20 justify-center">
+                <div class="text-center">
+                    <h1 class="font-semibold text-5xl">Skills & Utilities</h1>
+                    <h2 class="font-extralight text-2xl">Skill sets and techstacks that I use.</h2>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 lg:mx-56">
+
+                <!-- CodeIgniter -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>CodeIgniter</title>
+                        <path
+                            d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
+                    </svg>
+                    <p class="font-semibold">CodeIgniter</p>
+                </div>
+
+                <!-- Laravel -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Laravel</title>
+                        <path
+                            d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z" />
+                    </svg>
+                    <p class="font-semibold">Laravel</p>
+                </div>
+
+                <!-- Tailwind -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Tailwind CSS</title>
+                        <path
+                            d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
+                    </svg>
+                    <p class="font-semibold">Tailwind</p>
+                </div>
+
+                <!-- Bootstrap -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Bootstrap</title>
+                        <path
+                            d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z" />
+                    </svg>
+                    <p class="font-semibold">Bootstrap</p>
+                </div>
+
+                <!-- JavaScript -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>JavaScript</title>
+                        <path
+                            d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" />
+                    </svg>
+                    <p class="font-semibold">JavaScript</p>
+                </div>
+
+                <!-- TypeScript -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>TypeScript</title>
+                        <path
+                            d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z" />
+                    </svg>
+                    <p class="font-semibold">TypeScript</p>
+                </div>
+                <!-- Flutter -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Flutter</title>
+                        <path
+                            d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z" />
+                    </svg>
+                    <p class="font-semibold">Flutter</p>
+                </div>
+
+                <!-- Kotlin -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Kotlin</title>
+                        <path d="M24 24H0V0h24L12 12Z" />
+                    </svg>
+                    <p class="font-semibold">Kotlin</p>
+                </div>
+
+                <!-- MySQL -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>MySQL</title>
+                        <path
+                            d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z" />
+                    </svg>
+                    <p class="font-semibold">MySQL</p>
+                </div>
+
+                <!-- Firebase -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Firebase</title>
+                        <path
+                            d="M19.455 8.369c-.538-.748-1.778-2.285-3.681-4.569-.826-.991-1.535-1.832-1.884-2.245a146 146 0 0 0-.488-.576l-.207-.245-.113-.133-.022-.032-.01-.005L12.57 0l-.609.488c-1.555 1.246-2.828 2.851-3.681 4.64-.523 1.064-.864 2.105-1.043 3.176-.047.241-.088.489-.121.738-.209-.017-.421-.028-.632-.033-.018-.001-.035-.002-.059-.003a7.46 7.46 0 0 0-2.28.274l-.317.089-.163.286c-.765 1.342-1.198 2.869-1.252 4.416-.07 2.01.477 3.954 1.583 5.625 1.082 1.633 2.61 2.882 4.42 3.611l.236.095.071.025.003-.001a9.59 9.59 0 0 0 2.941.568q.171.006.342.006c1.273 0 2.513-.249 3.69-.742l.008.004.313-.145a9.63 9.63 0 0 0 3.927-3.335c1.01-1.49 1.577-3.234 1.641-5.042.075-2.161-.643-4.304-2.133-6.371m-7.083 6.695c.328 1.244.264 2.44-.191 3.558-1.135-1.12-1.967-2.352-2.475-3.665-.543-1.404-.87-2.74-.974-3.975.48.157.922.366 1.315.622 1.132.737 1.914 1.902 2.325 3.461zm.207 6.022c.482.368.99.712 1.513 1.028-.771.21-1.565.302-2.369.273a8 8 0 0 1-.373-.022c.458-.394.869-.823 1.228-1.279zm1.347-6.431c-.516-1.957-1.527-3.437-3.002-4.398-.647-.421-1.385-.741-2.194-.95.011-.134.026-.268.043-.4.014-.113.03-.216.046-.313.133-.689.332-1.37.589-2.025.099-.25.206-.499.321-.74l.004-.008c.177-.358.376-.719.61-1.105l.092-.152-.003-.001c.544-.851 1.197-1.627 1.942-2.311l.288.341c.672.796 1.304 1.548 1.878 2.237 1.291 1.549 2.966 3.583 3.612 4.48 1.277 1.771 1.893 3.579 1.83 5.375-.049 1.395-.461 2.755-1.195 3.933-.694 1.116-1.661 2.05-2.8 2.708-.636-.318-1.559-.839-2.539-1.599.79-1.575.952-3.28.479-5.072zm-2.575 5.397c-.725.939-1.587 1.55-2.09 1.856-.081-.029-.163-.06-.243-.093l-.065-.026c-1.49-.616-2.747-1.656-3.635-3.01-.907-1.384-1.356-2.993-1.298-4.653.041-1.19.338-2.327.882-3.379.316-.07.638-.114.96-.131l.084-.002c.162-.003.324-.003.478 0 .227.011.454.035.677.07.073 1.513.445 3.145 1.105 4.852.637 1.644 1.694 3.162 3.144 4.515z" />
+                    </svg>
+                    <p class="font-semibold">Firebase</p>
+                </div>
+
+                <!-- Git -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Git</title>
+                        <path
+                            d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187" />
+                    </svg>
+                    <p class="font-semibold">Git</p>
+                </div>
+
+                <!-- Figma -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Figma</title>
+                        <path
+                            d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z" />
+                    </svg>
+                    <p class="font-semibold">Figma</p>
+                </div>
+
+                <!-- Unity -->
+                <div
+                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
+                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Unity</title>
+                        <path
+                            d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z" />
+                    </svg>
+                    <p class="font-semibold">Unity</p>
+                </div>
+
+            </div>
+            <div class="flex flex-wrap mt-20 mb-20 justify-center">
+                <div class="text-center">
+                    <h1 class="font-semibold text-5xl">Experience</h1>
+                    <h2 class="font-extralight text-2xl">Timeline of my education and experience.</h2>
+                </div>
+            </div>
+            <div class="relative border-l border-gray-300 dark:border-gray-600">
+                <div class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-blue-500 rounded-full mt-1.5 -left-0 border border-white"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Jan 2020 - Dec
+                        2020</time>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Frontend Developer at XYZ Corp</h3>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Worked on several frontend
+                        projects, built responsive and modern UI components using React and Tailwind CSS.</p>
+                </div>
+                <div class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-blue-500 rounded-full mt-1.5 -left-0 border border-white"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Jan 2020 - Dec
+                        2020</time>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Frontend Developer at XYZ Corp</h3>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Worked on several frontend
+                        projects, built responsive and modern UI components using React and Tailwind CSS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Profile Section End -->
+
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="bg-black text-secondary pt-36 pb-36">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full">
+                    <h1 class="font-bold text-6xl">Contact</h1>
+                    <h2 class="font-extralight text-3xl">Stay In Touch</h2>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center mt-20 mb-20">
+                <p class="text-2xl max-w-screen-lg leading-relaxed text-center font-light">Let's interact if you are
+                    interested in
+                    <span class="font-semibold">collaborating</span> together, feel free to
+                    reach out for new <span class="font-semibold">opportunities</span> and <span
+                        class="font-semibold">follow</span> my social media to
+                    stay in touch.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Email -->
+                <a href="mailto:muhammadalfandihasibuan@gmail.com" target="_blank" class="block">
+                    <div
+                        class="flex items-start space-x-4 p-4 rounded-lg text-white hover:bg-slate-700 transition-colors group">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 fill-current text-white" role="img" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
-                                <title>GitHub</title>
+                                <title>Gmail</title>
                                 <path
-                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                    d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
                             </svg>
-                        </a>
-                        <!-- Github SVG End -->
-                        <!-- LinkedIn SVG Start -->
-                        <a target="_blank" href="https://linkedin.com/in/alfandihasibuan/"
-                            class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-secondary border border-primary hover:bg-primary hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">
-                            <svg class="fill-current" role="img" width="20px" role="img" viewBox="0 0 24 24"
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-lg font-semibold">Email</span>
+                                <svg class="fill-current text-gray-400 w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400">Send me an email</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/alfandihasibuan/" target="_blank" class="block">
+                    <div
+                        class="flex items-start space-x-4 p-4 rounded-lg text-white hover:bg-slate-700 transition-colors group">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 fill-current text-white" role="img" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <title>LinkedIn</title>
                                 <path
                                     d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
-                        </a>
-                        <!-- LinkedIn SVG End -->
-                        <!-- Notion SVG Start -->
-                        <a target="_blank"
-                            href="https://alfandi.notion.site/Hi-Welcome-to-my-notion-site-5ad25c7316824732875220145ca09b86"
-                            class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-secondary border border-primary hover:bg-primary hover:opacity-90 transition duration-300 ease-in-out">
-                            <svg class="fill-current" role="img" width="21px" role="img" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>Notion</title>
-                                <path
-                                    d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z" />
-                            </svg>
-                        </a>
-                        <!-- Notion SVG End -->
-                        <!-- Twitter SVG Start -->
-                        <a target="_blank" href="https://x.com/alfandi_hsb"
-                            class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-secondary border border-primary hover:bg-primary hover:opacity-90 transition duration-300 ease-in-out">
-                            <svg class="fill-current" role="img" width="20px" role="img" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>X</title>
-                                <path
-                                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
-                            </svg>
-                        </a>
-                        <!-- Twitter SVG End -->
-                        <!-- Instagram SVG Start -->
-                        <a target="_blank" href="https://instagram.com/alfandi.hsb/"
-                            class="w-10 h-10 mr-3 rounded-full flex justify-center items-center text-secondary border border-primary hover:bg-primary hover:opacity-90 transition duration-300 ease-in-out">
-                            <svg class="fill-current" role="img" width="22px" role="img" viewBox="0 0 24 24"
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-lg font-semibold">LinkedIn</span>
+                                <svg class="fill-current text-gray-400 w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400">Connect on LinkedIn</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/alfandi.hsb/" target="_blank" class="block">
+                    <div
+                        class="flex items-start space-x-4 p-4 rounded-lg text-white hover:bg-slate-700 transition-colors group">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 fill-current text-white" role="img" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <title>Instagram</title>
                                 <path
                                     d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
                             </svg>
-                        </a>
-                        <!-- Instagram SVG End -->
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-lg font-semibold">Instagram</span>
+                                <svg class="fill-current text-gray-400 w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400">Follow me on Instagram</p>
+                        </div>
                     </div>
-                    <p class="text-secondary text-xs text-center">
-                        &copy;
-                        <a href="https://alfandihasibuan.github.io" class="text-primary">Alfandi
-                            Hasibuan</a>
-                    </p>
-                    <p class="text-secondary text-xs text-center mt-2">Made with a cup of coffee ☕ and
-                        TailwindCSS</p>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/alfandihasibuan" target="_blank" class="block">
+                    <div
+                        class="flex items-start space-x-4 p-4 rounded-lg text-white hover:bg-slate-700 transition-colors group">
+                        <div class="flex-shrink-0">
+                            <svg class="fill-current text-white w-8 h-8" role="img" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>GitHub</title>
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-lg font-semibold">GitHub</span>
+                                <svg class="fill-current text-gray-400 w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400">Follow me on GitHub</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Discord -->
+                <a href="https://discord.com/users/username" target="_blank" class="block">
+                    <div
+                        class="flex items-start space-x-4 p-4 rounded-lg text-white hover:bg-slate-700 transition-colors group">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 fill-current text-white" role="img" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>Discord</title>
+                                <path
+                                    d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-lg font-semibold">Discord</span>
+                                <svg class="fill-current text-gray-400 w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400">Join me on Discord</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- X (Twitter) -->
+                <a href="https://x.com/alfandi_hsb" target="_blank" class="block">
+                    <div
+                        class="flex items-start space-x-4 p-4 rounded-lg text-white hover:bg-slate-700 transition-colors group">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 fill-current text-white" role="img" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>X</title>
+                                <path
+                                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-lg font-semibold">X (Twitter)</span>
+                                <svg class="fill-current text-gray-400 w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400">Follow me on X</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://t.me/username" target="_blank" class="block">
+                    <div
+                        class="flex items-start space-x-4 p-4 rounded-lg text-white hover:bg-slate-700 transition-colors group">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 fill-current text-white" role="img" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>Telegram</title>
+                                <path
+                                    d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-lg font-semibold">Telegram</span>
+                                <svg class="fill-current text-gray-400 w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400">Chat on Telegram</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Line -->
+                <a href="https://line.me/ti/p/username" target="_blank" class="block">
+                    <div
+                        class="flex items-start space-x-4 p-4 rounded-lg text-white hover:bg-slate-700 transition-colors group">
+                        <div class="flex-shrink-0">
+                            <svg class="w-8 h-8 fill-current text-white" role="img" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>LINE</title>
+                                <path
+                                    d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-lg font-semibold">Line</span>
+                                <svg class="fill-current text-gray-400 w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400">Connect on Line</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Thank Section Start -->
+    <section class="bg-black text-secondary pt-36 pb-36">
+        <div class="container">
+            <div class="flex flex-nowrap">
+                <div class="w-full">
+                    <div class="flex flex-wrap mt-20 mb-20 justify-center">
+                        <div class="text-center">
+                            <h1
+                                class="typing-effect text-6xl font-bold inline-block h-[60px] whitespace-nowrap overflow-hidden">
+                                <span class="transition-opacity duration-300 group-hover:opacity-0"></span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap mt-20 mb-20 justify-center">
+                        <div class="items-center">
+                            <a href="#home">
+                                <button class="interactive-button border px-12 py-12 rounded-full">
+                                    <svg class="fill-current hover: transition-transform animate-pulse w-10 h-10"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path
+                                            d="M480-545.33 287.33-352.67 240-400l240-240 240 240-47.33 47.33L480-545.33Z" />
+                                    </svg>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
-        <!-- Footer Section End -->
+        </div>
+    </section>
+    <!-- Thank Section End -->
 
-        <!-- Back To Top Start -->
-        <a id="to-top" href="#home"
-            class="fixed justify-center items-center h-12 w-12 p-3 shadow-lg bg-primary hidden z-[9999] bottom-4 right-4 rounded-lg hover:animate-pulse">
-            <span class="block w-5 h-5 rotate-45 border-t-2 border-l-2 mt-2"></span>
-        </a>
-        <!-- Back To Top End -->
+    <!-- Footer Section Start -->
+    <footer class="bg-black pt-6 pb-6">
+        <div class="container">
+            <div class="w-full pt-10 border-t">
+                <p class="text-secondary text-center font-light text-xs">
+                    &copy;
+                    <a href="https://alfandihasibuan.github.io"
+                        class="hover:text-primary transition-colors ease-in-out">Alfandi
+                        Hasibuan</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
 
-        <script src="public/js/script.js"></script>
-    </div>
+    <!-- JS -->
+    <script src="public/js/script.js"></script>
 
 </body>
 

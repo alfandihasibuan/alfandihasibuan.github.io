@@ -1,25 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["index.html"],
-  darkMode: 'class',
   theme: {
     container: {
       center: true,
       padding: "28px",
     },
     extend: {
-      screens: {
-        "2xl": "1320px",
-      },
       colors: {
         primary: "#6D9886",
+        secondary: "#E1E1E1",
         base: "#393E46",
-        secondary: "#F7F7F7",
+        black: "#101010",
       },
       fontFamily: {
         poppins: ["Poppins"],
       },
     },
   },
-  plugins: ['prettier-plugin-tailwindcss'],
-};
+  plugins: [],
+}
