@@ -23,9 +23,17 @@
     <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
         <div class="container">
             <div class="flex items-center justify-between relative">
-                <div class="px-4">
-                    <a href="#home" class="font-bold text-lg text-primary block py-6">alfandihasibuan</a>
-                </div>
+                <!-- <div class="px-4">
+                    <a href="#home"
+                        class="font-bold text-lg text-secondary hover:text-primary block py-6">alfandihasibuan</a>
+                </div> -->
+                <a href="#home" class="relative font-bold text-lg text-black block py-6 group">
+                    <span class="bg-gradient-to-r from-secondary to-primary 
+               bg-[length:200%_600%] bg-clip-text text-transparent 
+               transition-all duration-700 group-hover:bg-[position:157%_100%]">
+                        alfandihasibuan
+                    </span>
+                </a>
                 <div class="flex items-center justify-center px-4">
                     <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
                         <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
@@ -69,20 +77,25 @@
     <!-- Header End -->
 
     <!-- Hero Section Start -->
-    <section id="home" class="bg-black text-secondary pt-36 pb-36">
-        <div class="container">
-            <div class="flex flex-wrap">
-                <div class="w-full">
-                    <h1 class="font-bold text-6xl">Alfandi Hasibuan</h1>
-                    <h2 class="font-extralight text-3xl">Fullstack Developer</h2>
-                </div>
-            </div>
+    <section id="home" class="relative bg-black text-secondary h-screen flex items-center justify-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-secondary via-blue-500 to-primary 
+                    bg-[length:200%_200%] animate-gradient-x opacity-30"></div>
+
+        <div class="container relative z-10 text-center">
+            <h1 class="font-bold text-6xl text-white">Alfandi Hasibuan</h1>
+            <h2 class="font-extralight text-3xl text-gray-300">Fullstack Developer</h2>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+            <a href="#projects" class="text-white text-lg animate-bounce">↓ Scroll Down</a>
         </div>
     </section>
+
     <!-- Hero Section End -->
 
     <!-- Projects Section Start -->
-    <section id="projects" class="bg-black text-secondary pt-36 pb-36">
+    <section id="projects" class="relative mt-screen bg-black text-secondary pt-36 pb-36">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full">
@@ -94,7 +107,7 @@
             <!-- Project 1 -->
             <div class="mt-20 bg-base text-black rounded-lg shadow-lg">
                 <div class="relative">
-                    <img src="public/img/bg-zen.png" alt="Project Image" class="w-full h-96 object-cover rounded-lg">
+                    <img src="public/img/p-1.png" alt="Project Image" class="w-full h-96 object-cover rounded-lg">
                     <div
                         class="absolute bottom-0 left-0 bg-base bg-opacity-60 w-full p-4 flex justify-between items-center text-white rounded-b-lg">
                         <div class="">
@@ -235,77 +248,6 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="mt-20 bg-base text-black rounded-lg shadow-lg">
-                <div class="relative">
-                    <img src="public/img/bg-zen.png" alt="Project Image" class="w-full h-96 object-cover rounded-lg">
-                    <div
-                        class="absolute bottom-0 left-0 bg-base bg-opacity-60 w-full p-4 flex justify-between items-center text-white rounded-b-lg">
-                        <div class="">
-                            <a href="https://siakadmtsalarafah.xyz/" target="_blank"
-                                class="text-2xl font-semibold flex items-center group">
-                                Academic System: MTs Al-Arafah
-                                <svg class="ml-2 fill-current text-secondary w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                                    <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
-                                </svg>
-                            </a>
-                            <p class="text-sm">May 2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex flex-wrap gap-4 mb-4 lg:gap-0">
-                        <div class="w-full lg:w-1/2 text-secondary">
-                            <h4 class="font-semibold">RESPONSIBILITIES</h4>
-                            <p class="">Fullstack Developer</p>
-                        </div>
-                        <div class="w-full lg:w-1/2 text-secondary">
-                            <h4 class="font-semibold">TECH STACK</h4>
-                            <div class="flex space-x-4 ">
-                                <span class="flex items-center space-x-1">
-                                    <!-- Icon for CodeIgniter -->
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
-                                    </svg>
-                                    <span>CodeIgniter</span>
-                                </span>
-                                <span class="flex items-center space-x-1">
-                                    <!-- Icon for Bootstrap -->
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z" />
-                                    </svg>
-                                    <span>Bootstrap</span>
-                                </span>
-                                <span class="flex items-center space-x-1">
-                                    <!-- Icon for MySQL -->
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z" />
-                                    </svg>
-                                    <span>MySQL</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Short Description -->
-                    <div class="text-secondary">
-                        <h4 class="font-semibold">SHORT DESCRIPTION</h4>
-                        <p class="mt-2">
-                            This project is a comprehensive school website designed to support an academic system where
-                            students can securely log in to access their grades, schedules, and other essential academic
-                            information. The platform offers a user-friendly interface that allows students to track
-                            their progress and stay organized with their coursework. Additionally, it provides features
-                            for easy management by school administrators, enabling them to update student records,
-                            manage course offerings, and communicate important announcements effectively. With robust
-                            security measures in place, the website ensures that all personal and academic data remains
-                            confidential and accessible only to authorized users. Overall, this project aims to enhance
-                            the educational experience by facilitating better communication and organization within the
-                            school community.</p>
-                    </div>
-                </div>
-            </div>
 
             <!-- Project 4 -->
             <div class="mt-20 bg-base text-black rounded-lg shadow-lg">
@@ -510,7 +452,8 @@
             </div>
 
             <div class="flex flex-wrap justify-center mt-20 mb-20 group">
-                <a href="#" target="_blank" class="text-2xl font-light flex items-center">
+                <a href="https://alfandi.notion.site/Hi-Welcome-to-my-notion-site-5ad25c7316824732875220145ca09b86"
+                    target="_blank" class="text-2xl font-light flex items-center">
                     <p>See <span class="font-semibold">more</span> in <span class="font-semibold">my archive</span></p>
                     <svg class="ml-2 fill-current text-secondary w-4 h-4 transition-transform duration-300 group-hover:rotate-45"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
@@ -702,18 +645,6 @@
                             d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z" />
                     </svg>
                     <p class="font-semibold">Figma</p>
-                </div>
-
-                <!-- Unity -->
-                <div
-                    class="flex flex-col items-center w-24 h-24 gap-y-2 rounded-md text-center hover:bg-slate-700 transition-colors">
-                    <svg class="w-10 h-10 mt-4 fill-current" role="img" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <title>Unity</title>
-                        <path
-                            d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z" />
-                    </svg>
-                    <p class="font-semibold">Unity</p>
                 </div>
 
             </div>
@@ -1101,7 +1032,11 @@
 
     <!-- JS -->
     <script src="public/js/script.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script>
+        gsap.from("#home h1", { opacity: 0, y: -50, duration: 1 });
+        gsap.from("#home h2", { opacity: 0, y: 50, duration: 1, delay: 0.3 });
+    </script>
 </body>
 
 </html>
